@@ -9,22 +9,12 @@
 #include "Scena.hh"
 
 /*!
- * Pobiera ze zmiennych statycznnych informacje o stworzonych obiektach typu \e Wektor2D, oraz
- * wyświetla tą informację na stdout.
- */
-void Scena::WyswietlWektory()
-{
-        std::cout << "Laczna ilosc stworzonych obiektow klasy Wektor2D: " << Wektor2D::WektoryOgolne << std::endl;
-        std::cout << "Ilosc istniejacych obiektow klasy Wektor2D: " << Wektor2D::WektoryAktualne << std::endl << std::endl;
-}
-
-/*!
  * Wyświetla informację o możliwych wyborach obsługiwanych przez program. Dodatkowo przy
- * użyciu metody \e WyswietlWektory wyświetla informacje o ilości obiektów typu \e Wektor2D.
+ * użyciu metody \e PokazWektory wyświetla informacje o ilości obiektów typu \e Wektor2D.
  */
 void Scena::WyswietlMenu()
 {
-    WyswietlWektory();
+    Wektor2D::PokazWektory();
     std::cout << "j -> Jazda na wprost" << std::endl;
     std::cout << "o -> Obrot o kat" << std::endl;
     std::cout << "w -> Ponowne wyswietlenie menu" << std::endl;

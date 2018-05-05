@@ -11,11 +11,7 @@
  *  których zdefiniowane są podstawowe działania arytmetyczne.
  */
 
-
-
 #include <iostream>
-
-
 
 /*!
  * \brief Szablon klasy wektor parametryzowanej wymiarem i typem współrzędnych
@@ -30,6 +26,16 @@ class SWektor
 {
 
     /*!
+     * Przechowuje informacje o ilości aktualnie istniejących obiektów klasy Wektor2D.
+     */
+    static int WektoryAktualne;
+
+    /*!
+     * Przechowuje informacje o ilości ogólnie stworzonych obiektów klasy Wektor2D.
+     */
+    static int WektoryOgolne;
+
+    /*!
      * \brief Współrzędne wektora
      *
      *  Tablica zawiera kolejne współrzędne wektora.
@@ -39,14 +45,13 @@ class SWektor
 public:
 
     /*!
-     * Przechowuje informacje o ilości aktualnie istniejących obiektów klasy Wektor2D.
+     * Metoda wyświetlająca aktualną zawartość zmiennych statycznych wraz z odpowiednim opisem.
      */
-    static int WektoryAktualne;
-
-    /*!
-     * Przechowuje informacje o ilości ogólnie stworzonych obiektów klasy Wektor2D.
-     */
-    static int WektoryOgolne;
+    static void PokazWektory()
+    {
+        std::cout << "Laczna ilosc stworzonych obiektow klasy Wektor2D: " << WektoryOgolne << std::endl;
+        std::cout << "Ilosc istniejacych obiektow klasy Wektor2D: " << WektoryAktualne << std::endl << std::endl;
+    }
 
     /*!
      * \brief Inicjaliuje obiekt wartościami 0, oraz dokumentuje stowrzenie obiektu typu Wektor2D.

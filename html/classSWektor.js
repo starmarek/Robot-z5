@@ -8,6 +8,7 @@ var classSWektor =
     [ "operator-", "classSWektor.html#a87a55e9a9e528348457ea86ee5e7339a", null ],
     [ "operator[]", "classSWektor.html#ad3be76bf179e0c4f4dc64da4de67e525", null ],
     [ "operator[]", "classSWektor.html#a7b8653b0a7784ae0cccebad58ed0cbcc", null ],
+    [ "PokazWektory", "classSWektor.html#a67b3862b53281b0a4753597934b6d92c", null ],
     [ "_Wsp", "classSWektor.html#a983932d77c089af8a21eff5cf637c0fa", null ],
     [ "WektoryAktualne", "classSWektor.html#a20ee0901ded2bb9ba6836e41bc4243fa", null ],
     [ "WektoryOgolne", "classSWektor.html#a9600e483111d423cc628560c69c0179c", null ]

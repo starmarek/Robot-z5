@@ -5,5 +5,9 @@ digraph "Scena::WyswietlMenu"
   rankdir="LR";
   Node1 [label="Scena::WyswietlMenu",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="Scena::WyswietlWektory",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classScena.html#ac25827eebae589fede7f9f9d30deab5b",tooltip="Funckja bezpośrednio wyświetlająca ilość stworzonych obiektów klasy Wektor2D. "];
+  Node2 [label="SWektor\< float, 2 \>\l::PokazWektory",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSWektor.html#a67b3862b53281b0a4753597934b6d92c"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="SWektor::SWektor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSWektor.html#a38e2a7e20ce4da24eb97c83fe198b9ef",tooltip="Inicjaliuje obiekt wartościami 0, oraz dokumentuje stowrzenie obiektu typu Wektor2D. "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="SWektor::~SWektor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSWektor.html#a4bb859eaae8cfa02ecde57834c5022fb",tooltip="Dokumentuje usunięcie obiektu typu Wektor2D. "];
 }

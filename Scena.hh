@@ -46,11 +46,6 @@ public:
      * \brief Uruchamia, kończy i kontroluje przebieg działania programu.
      */
     void Run();
-
-    /*!
-     * \brief Funckja bezpośrednio wyświetlająca ilość stworzonych obiektów klasy \e Wektor2D.
-     */
-    void WyswietlWektory();
 };
 
 #endif

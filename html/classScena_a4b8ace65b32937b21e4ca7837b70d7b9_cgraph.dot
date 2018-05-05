@@ -33,9 +33,13 @@ digraph "Scena::Run"
   Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node12 [label="Scena::WyswietlMenu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classScena.html#ab4c786d9def8a483b9873c27b5bd7f13",tooltip="Wyświetla możliwości wyboru dla użytkownika, oraz ilość stworzonych obiektów klasy Wektor2D..."];
   Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node13 [label="Scena::WyswietlWektory",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classScena.html#ac25827eebae589fede7f9f9d30deab5b",tooltip="Funckja bezpośrednio wyświetlająca ilość stworzonych obiektów klasy Wektor2D. "];
-  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node14 [label="Robot::ZmienSzybkosc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRobot.html#ad923ce740c64bb91707a542db4a16f7d",tooltip="Metoda zmieniająca szybkosc robota. "];
-  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node15 [label="PzG::LaczeDoGNUPlota\l::ZmienTrybRys",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPzG_1_1LaczeDoGNUPlota.html#a10950349b348fd3a3d4143e95337527c",tooltip="Zmienia tryb rysowania. "];
+  Node13 [label="SWektor\< float, 2 \>\l::PokazWektory",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSWektor.html#a67b3862b53281b0a4753597934b6d92c"];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="SWektor::SWektor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSWektor.html#a38e2a7e20ce4da24eb97c83fe198b9ef",tooltip="Inicjaliuje obiekt wartościami 0, oraz dokumentuje stowrzenie obiektu typu Wektor2D. "];
+  Node13 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="SWektor::~SWektor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSWektor.html#a4bb859eaae8cfa02ecde57834c5022fb",tooltip="Dokumentuje usunięcie obiektu typu Wektor2D. "];
+  Node1 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="Robot::ZmienSzybkosc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRobot.html#ad923ce740c64bb91707a542db4a16f7d",tooltip="Metoda zmieniająca szybkosc robota. "];
+  Node1 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="PzG::LaczeDoGNUPlota\l::ZmienTrybRys",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPzG_1_1LaczeDoGNUPlota.html#a10950349b348fd3a3d4143e95337527c",tooltip="Zmienia tryb rysowania. "];
 }
