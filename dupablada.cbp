@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="dupablada" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/dupablada" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="ObiektGraficzny.cpp" />
+		<Unit filename="ObiektGraficzny.hh" />
+		<Unit filename="Robot.cpp" />
+		<Unit filename="Robot.hh" />
+		<Unit filename="SWektor.hh" />
+		<Unit filename="Scena.cpp" />
+		<Unit filename="Scena.hh" />
+		<Unit filename="Sciezka.cpp" />
+		<Unit filename="Sciezka.hh" />
+		<Unit filename="Wektor2D.hh" />
+		<Unit filename="ZbiorWierzcholkow.cpp" />
+		<Unit filename="ZbiorWierzcholkow.hh" />
+		<Unit filename="lacze_do_gnuplota.cpp" />
+		<Unit filename="lacze_do_gnuplota.hh" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
