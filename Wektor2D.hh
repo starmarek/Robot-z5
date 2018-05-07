@@ -14,6 +14,6 @@
 /*!
  * \brief Alias do instacji szablon SWektor
  */
-typedef SWektor<float,2>  Wektor2D;
+typedef SWektor<double ,2>  Wektor2D;
 
 #endif

@@ -16,6 +16,7 @@ void Scena::WyswietlMenu()
 {
     Wektor2D::PokazWektory();
     std::cout << "j -> Jazda na wprost" << std::endl;
+    std::cout << "s -> Zmiana wielkosci robota" << std::endl;
     std::cout << "o -> Obrot o kat" << std::endl;
     std::cout << "w -> Ponowne wyswietlenie menu" << std::endl;
     std::cout << "z -> Zmiana szybkosci robota" << std::endl << std::endl;
@@ -34,8 +35,10 @@ void Scena::Run()
     lacze.ZmienTrybRys(PzG::TR_2D);
     lacze.DodajNazwePliku("figury/sciezka.dat",PzG::RR_Ciagly,3);
     lacze.ZmienTrybRys(PzG::TR_2D);
-    std::cout << std::endl << "---------------Centrum Sterowania Robotem--------------------" << std::endl << std::endl;
     R.InicjalizujKsztalt();
+    R.DodajRobota();
+    std::cout << std::endl << "---------------Centrum Sterowania Robotem--------------------" << std::endl << std::endl;
+
     WyswietlMenu();
 
     while(znak != 'k')
@@ -64,6 +67,13 @@ void Scena::Run()
             std::cout << "Podaj kat o jaki ma sie obrocic robot: \n";
             std::cin >> tm;
             R.obroc(tm);
+            break;
+
+        case 's':
+            double a;
+            std::cout << "Podaj wartosc do skalowania robota:  " << std::endl;
+            std::cin >> a;
+            R.Skaluj(a);
             break;
 
         default:

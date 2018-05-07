@@ -23,7 +23,7 @@ public:
     /*!
      * \brief Konstruktor inicjalizujący pierwszy punkt linii.
      */
-    Sciezka();
+    void DodajPierwszyPunkt(double a, double b);
 
     /*!
      * \brief Funkcja rysująca linie

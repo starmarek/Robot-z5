@@ -23,6 +23,8 @@
 class Robot : public ObiektGraficzny
 {
 
+    double skala = 1;
+
     /*!
      * \brief Zmienna potrzebna do komunikacji z programem \e gnuplot.
      *
@@ -76,6 +78,10 @@ public:
      *  posiadająca już wbudowaną animację.
      */
     void JedzProsto(double dlugosc);
+
+    void Skaluj(double w);
+
+    void DodajRobota();
 };
 
 #endif

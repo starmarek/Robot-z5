@@ -90,8 +90,15 @@ void Robot::InicjalizujKsztalt()
     _TabWierz.DodajWierzcholek(30, 0);
 
     ZapiszDoPliku("figury/robot.dat");
-    lacze.Rysuj();
+}
 
+void Robot::DodajRobota()
+{
+    std::cout << "Podaj wspolrzedne srodka robota aby go stworzyc: " << std::endl;
+    std::cin >> _PolozenieObiektu[0] >> _PolozenieObiektu[1];
+    ZapiszDoPliku("figury/robot.dat");
+    sciezkowy.DodajPierwszyPunkt(_PolozenieObiektu[0], _PolozenieObiektu[1]);
+    lacze.Rysuj();
 }
 
 /*!
@@ -126,4 +133,19 @@ void Robot::JedzProsto(double dlugosc)
         usleep(40000 / szybkosc);
 
     }
+}
+
+void Robot::Skaluj(double w)
+{
+
+    for(unsigned int i = 0; i < _TabWierz.size(); ++i)
+    {
+        _TabWierz[i][0] /= skala;
+        _TabWierz[i][1] /= skala;
+        _TabWierz[i][0] *= w;
+        _TabWierz[i][1] *= w;
+    }
+    skala = w;
+    ZapiszDoPliku("figury/robot.dat");
+    lacze.Rysuj();
 }

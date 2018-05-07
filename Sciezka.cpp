@@ -12,9 +12,9 @@
  * Dodaje wektor o współrzędnych  \e 0 i \e 0 do tablicy \e _TabWierz
  * a następnie zapisuje go do osobnego pliku.
  */
-Sciezka::Sciezka()
+void Sciezka::DodajPierwszyPunkt(double a, double b)
 {
-    _TabWierz.DodajWierzcholek(0, 0);
+    _TabWierz.DodajWierzcholek(a, b);
     ZapiszDoPliku("figury/sciezka.dat");
 }
 
