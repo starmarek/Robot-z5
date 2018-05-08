@@ -60,19 +60,26 @@ void Robot::Obrot(double a)
  * \param b - kąt o który ma się obrócić robot podany w stopniach, potrzebny aby pętla
  * \e for wykonała odpowiednią ilość jedno-stopniowych obrotów.
  */
-void Robot::obroc(double b)
+int Robot::obroc(double b)
 {
 
-    for (int i = 0; i < b; ++i)
+    for (int i = 0; i < b / szybkosc; ++i)
     {
-        Obrot(1);
+        if(b/szybkosc - i < 1)
+        {
+            Obrot((b/szybkosc-i)*szybkosc);
+            ZapiszDoPliku("figury/robot.dat");
+            lacze.Rysuj();
+            usleep(40000);
+            return 0;
+        }
+
+        Obrot(szybkosc);
         ZapiszDoPliku("figury/robot.dat");
         lacze.Rysuj();
-        usleep(40000 / szybkosc);
-
-
+        usleep(40000);
     }
-
+    return 0;
 }
 
 /*!
@@ -124,13 +131,13 @@ void Robot::JedzProsto(double dlugosc)
     wektorPrzemieszczenia[0] = cos(Alpha);
     wektorPrzemieszczenia[1] = sin(Alpha);
 
-    for (unsigned int i = 0; i < dlugosc; ++i)
+    for (unsigned int i = 0; i < dlugosc/szybkosc; ++i)
     {
-        PoruszOWektor(wektorPrzemieszczenia);
+        PoruszOWektor(wektorPrzemieszczenia*szybkosc);
         ZapiszDoPliku("figury/robot.dat");
         sciezkowy.RysujSciezke(_PolozenieObiektu);
         lacze.Rysuj();
-        usleep(40000 / szybkosc);
+        usleep(40000);
 
     }
 }

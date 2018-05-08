@@ -66,7 +66,7 @@ public:
     /*!
      * \brief Metoda odpowiadająca za realny obrót, to jest, animację.
      */
-    void obroc(double b);
+    int obroc(double b);
 
     /*!
      * \brief Metoda inicjalizująca robota na scenie.
