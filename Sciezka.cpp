@@ -9,8 +9,11 @@
 #include "Sciezka.hh"
 
 /*!
- * Dodaje wektor o współrzędnych  \e 0 i \e 0 do tablicy \e _TabWierz
+ * Dodaje wektor do tablicy \e _TabWierz
  * a następnie zapisuje go do osobnego pliku.
+ *
+ * \param a - X'owa współrzędna wektora.
+ * \param b - Y'owa współrzędna wektora.
  */
 void Sciezka::DodajPierwszyPunkt(double a, double b)
 {

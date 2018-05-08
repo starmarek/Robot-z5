@@ -17,7 +17,6 @@ void Robot::ZmienSzybkosc()
     std::cout << "Prosze podac nowa szybkosc poruszania sie i obrotu dla robota: \n";
     std::cin >> g;
     szybkosc = g;
-
 }
 
 /*!
@@ -55,19 +54,21 @@ void Robot::Obrot(double a)
  * Wykonuje animację obrotu widoczną na scenie.
  * Wykrzystuje funkcję \e usleep z nagłówka \e <unistd.h>,
  * aby pętla \e for była opóźniona, co daje efekt wykonującej się animacji.
- * Wielkość opóźnienia jest oczywiście modyfikowalna przez zmienną \e szybkosc.
+ * Metoda reaguje na zmiany szybkości, modyfikując ilość wykonanych skoków w pętli
+ * co daje wizulany efekt zmieniającej się prędkość robota.
  *
  * \param b - kąt o który ma się obrócić robot podany w stopniach, potrzebny aby pętla
- * \e for wykonała odpowiednią ilość jedno-stopniowych obrotów.
+ * \e for wykonała odpowiednią ilość skoków.
  */
 int Robot::obroc(double b)
 {
+    double tmp = b/szybkosc;
 
-    for (int i = 0; i < b / szybkosc; ++i)
+    for (int i = 0; i < tmp; ++i)
     {
-        if(b/szybkosc - i < 1)
+        if(tmp - i < 1)
         {
-            Obrot((b/szybkosc-i)*szybkosc);
+            Obrot((tmp - i) * szybkosc);
             ZapiszDoPliku("figury/robot.dat");
             lacze.Rysuj();
             usleep(40000);
@@ -83,8 +84,7 @@ int Robot::obroc(double b)
 }
 
 /*!
- * Tworzy wierzchołki robota o podanych współrzędnych
- * a następnie rysująca tego robota na scenie.
+ * Tworzy wierzchołki robota o podanych współrzędnych.
  */
 void Robot::InicjalizujKsztalt()
 {
@@ -99,6 +99,11 @@ void Robot::InicjalizujKsztalt()
     ZapiszDoPliku("figury/robot.dat");
 }
 
+/*!
+ * Metoda zmieniająca położenie robota względem zadanego przez użytkownika punktu.
+ * Dodatkowo inicjalizuje pierwszy punkt ścieżki oraz rysuje robota w programie
+ * \e gnuplot.
+ */
 void Robot::DodajRobota()
 {
     std::cout << "Podaj wspolrzedne srodka robota aby go stworzyc: " << std::endl;
@@ -124,24 +129,39 @@ void Robot::DodajRobota()
  * \param dlugosc - ilosc jednostek na skali sceny, o które ma się przesunąć robot względem swojego
  * aktualnego położenia.
  */
-void Robot::JedzProsto(double dlugosc)
+int Robot::JedzProsto(double dlugosc)
 {
     Wektor2D wektorPrzemieszczenia;
+    double tmp = dlugosc / szybkosc;
 
     wektorPrzemieszczenia[0] = cos(Alpha);
     wektorPrzemieszczenia[1] = sin(Alpha);
 
-    for (unsigned int i = 0; i < dlugosc/szybkosc; ++i)
+    for (unsigned int i = 0; i < tmp; ++i)
     {
-        PoruszOWektor(wektorPrzemieszczenia*szybkosc);
+        if(tmp - i < 1)
+        {
+           PoruszOWektor(wektorPrzemieszczenia * ((tmp - i) * szybkosc));
+           ZapiszDoPliku("figury/robot.dat");
+           sciezkowy.RysujSciezke(_PolozenieObiektu);
+           lacze.Rysuj();
+           usleep(40000);
+           return 0;
+        }
+        PoruszOWektor(wektorPrzemieszczenia * szybkosc);
         ZapiszDoPliku("figury/robot.dat");
         sciezkowy.RysujSciezke(_PolozenieObiektu);
         lacze.Rysuj();
         usleep(40000);
-
     }
+    return 0;
 }
 
+/*!
+ * Zmienia wielkość robota względem skali podanej przez użytkownika. Metoda zawsze
+ * najpierw uwzględnia aktualną skalę aby skalować robota przyjmując wartość podstawową
+ * równą jeden.
+ */
 void Robot::Skaluj(double w)
 {
 

@@ -128,10 +128,10 @@
 1525546914 source:/home/starmarek/Desktop/Robot-z5-master/main.cpp
 	"Scena.hh"
 
-1525555491 /home/starmarek/Desktop/Robot-z5-master/Scena.hh
+1525802152 /home/starmarek/Desktop/Robot-z5-master/Scena.hh
 	"Robot.hh"
 
-1525781422 /home/starmarek/Desktop/Robot-z5-master/Robot.hh
+1525801929 /home/starmarek/Desktop/Robot-z5-master/Robot.hh
 	<math.h>
 	<unistd.h>
 	"ObiektGraficzny.hh"
@@ -152,20 +152,20 @@
 1525555910 /home/starmarek/Desktop/Robot-z5-master/SWektor.hh
 	<iostream>
 
-1525782641 /home/starmarek/Desktop/Robot-z5-master/Sciezka.hh
+1525802092 /home/starmarek/Desktop/Robot-z5-master/Sciezka.hh
 	"ObiektGraficzny.hh"
 
 1525546716 source:/home/starmarek/Desktop/Robot-z5-master/ObiektGraficzny.cpp
 	<fstream>
 	"ObiektGraficzny.hh"
 
-1525782561 source:/home/starmarek/Desktop/Robot-z5-master/Robot.cpp
+1525801929 source:/home/starmarek/Desktop/Robot-z5-master/Robot.cpp
 	"Robot.hh"
 
 1525727533 source:/home/starmarek/Desktop/Robot-z5-master/Scena.cpp
 	"Scena.hh"
 
-1525782554 source:/home/starmarek/Desktop/Robot-z5-master/Sciezka.cpp
+1525802092 source:/home/starmarek/Desktop/Robot-z5-master/Sciezka.cpp
 	"Sciezka.hh"
 
 1525517183 source:/home/starmarek/Desktop/Robot-z5-master/ZbiorWierzcholkow.cpp

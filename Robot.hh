@@ -22,13 +22,18 @@
  */
 class Robot : public ObiektGraficzny
 {
-
+    /*!
+     * \brief Skala wielkości robota.
+     *
+     * Odzwierciedla wielkość robota, przyjmując wartość wyjściową równą jeden.
+     */
     double skala = 1;
 
     /*!
      * \brief Zmienna potrzebna do komunikacji z programem \e gnuplot.
      *
-     * Dzięki tej zmiennej możemy rysować na bierząco robota i  ścieżke.
+     * Dzięki tej zmiennej możemy rysować na bierząco robota i  ścieżke
+     * w programie \e gnuplot.
      */
     PzG::LaczeDoGNUPlota lacze;
 
@@ -36,8 +41,6 @@ class Robot : public ObiektGraficzny
      * \brief Osobista ścieżka danego robota.
      *
      * Zmienna dzięki której możemy rysować ścieżkę podczas ruchu robota.
-     * Sama jej inicjalizacja, dodaje pierwszy punkt ścieżki w miejscu gdzie pojawi się robot,
-     * z uwagi na konstruktor.
      */
     Sciezka sciezkowy;
 
@@ -46,8 +49,7 @@ class Robot : public ObiektGraficzny
      *
      * Zmienna dzięki, której możemy modyfikować opóźnienie w pętlach odpowiedzialnych
      * za animację obrotu/ruchu. Wyjściowo jest ustawiona na 1, czyli jest to wartość
-     * neutralna. Dla przykładu zmiana szybkości na 2 sprawi, że animacja będzie przebiegała
-     * dwa razy szybciej.
+     * neutralna.
      */
     double szybkosc = 1;
 
@@ -77,10 +79,16 @@ public:
      * \brief Metoda przemieszczająca robota na podaną odległość,
      *  posiadająca już wbudowaną animację.
      */
-    void JedzProsto(double dlugosc);
+    int JedzProsto(double dlugosc);
 
+    /*!
+     * \brief Metoda skalująca robota.
+     */
     void Skaluj(double w);
 
+    /*!
+     * \brief Metoda wyświetlająca robota w zadanym przez użytkownika położeniu.
+     */
     void DodajRobota();
 };
 

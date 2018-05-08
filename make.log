@@ -19,101 +19,105 @@ since release 1.8.2.  As a result some sentences may appear in English.
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/lacze__do__gnuplota_8cpp__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/lacze__do__gnuplota_8cpp__incl.png"'
 sh: 1: dot: not found
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/main_8cpp__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/main_8cpp__incl.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/lacze__do__gnuplota_8hh__dep__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/lacze__do__gnuplota_8hh__dep__incl.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/lacze__do__gnuplota_8hh__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/lacze__do__gnuplota_8hh__incl.png"'
-sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/ObiektGraficzny_8cpp__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/ObiektGraficzny_8cpp__incl.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/ObiektGraficzny_8hh__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/ObiektGraficzny_8hh__incl.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/ObiektGraficzny_8hh__dep__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/ObiektGraficzny_8hh__dep__incl.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Robot_8cpp__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Robot_8cpp__incl.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Robot_8hh__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Robot_8hh__incl.png"'
 sh: 1: dot: not found
 sh: 1: dot: not found
-sh: 1: error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Scena_8cpp__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Scena_8cpp__incl.png"'
-dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Sciezka_8hh__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Sciezka_8hh__incl.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/ObiektGraficzny_8hh__dep__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/ObiektGraficzny_8hh__dep__incl.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/lacze__do__gnuplota_8hh__dep__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/lacze__do__gnuplota_8hh__dep__incl.png"'
 sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/main_8cpp__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/main_8cpp__incl.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/SWektor_8hh__dep__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/SWektor_8hh__dep__incl.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Robot_8cpp__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Robot_8cpp__incl.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/lacze__do__gnuplota_8hh__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/lacze__do__gnuplota_8hh__incl.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/ObiektGraficzny_8hh__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/ObiektGraficzny_8hh__incl.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Scena_8hh__dep__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Scena_8hh__dep__incl.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Sciezka_8hh__dep__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Sciezka_8hh__dep__incl.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Robot_8hh__dep__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Robot_8hh__dep__incl.png"'
-sh: 1: dot: not found
-sh: 1: dot: not found
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Sciezka_8cpp__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Sciezka_8cpp__incl.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Wektor2D_8hh__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Wektor2D_8hh__incl.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Wektor2D_8hh__dep__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Wektor2D_8hh__dep__incl.png"'
-sh: 1: error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Scena_8hh__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Scena_8hh__incl.png"'
-dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/ZbiorWierzcholkow_8hh__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/ZbiorWierzcholkow_8hh__incl.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Sciezka_8hh__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Sciezka_8hh__incl.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/ZbiorWierzcholkow_8hh__dep__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/ZbiorWierzcholkow_8hh__dep__incl.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Scena_8hh__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Scena_8hh__incl.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/SWektor_8hh__dep__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/SWektor_8hh__dep__incl.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/SWektor_8hh__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/SWektor_8hh__incl.png"'
 sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Wektor2D_8hh__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Wektor2D_8hh__incl.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/ZbiorWierzcholkow_8cpp__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/ZbiorWierzcholkow_8cpp__incl.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Wektor2D_8hh__dep__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Wektor2D_8hh__dep__incl.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classRobot_a5fee7a53e5228e5abf0fdb399d36ff6c_cgraph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classRobot_a5fee7a53e5228e5abf0fdb399d36ff6c_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/ZbiorWierzcholkow_8hh__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/ZbiorWierzcholkow_8hh__incl.png"'
 sh: 1: dot: not found
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classRobot_a97732ffbe82011996c67efb27cb08402_cgraph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classRobot_a97732ffbe82011996c67efb27cb08402_cgraph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classRobot__inherit__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classRobot__inherit__graph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classScena__coll__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classScena__coll__graph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classObiektGraficzny__inherit__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classObiektGraficzny__inherit__graph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classObiektGraficzny__coll__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classObiektGraficzny__coll__graph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classRobot_a8a16f8744aa8d38dfe88216633ec0a90_cgraph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classRobot_a8a16f8744aa8d38dfe88216633ec0a90_cgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classScena_ab4c786d9def8a483b9873c27b5bd7f13_cgraph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classScena_ab4c786d9def8a483b9873c27b5bd7f13_cgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classScena_a4b8ace65b32937b21e4ca7837b70d7b9_cgraph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classScena_a4b8ace65b32937b21e4ca7837b70d7b9_cgraph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classSciezka__coll__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classSciezka__coll__graph.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classSciezka_a1bd5d92a611df435746d48568b8c11e1_cgraph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classSciezka_a1bd5d92a611df435746d48568b8c11e1_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Scena_8cpp__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Scena_8cpp__incl.png"'
 sh: 1: dot: not found
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classSWektor__inherit__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classSWektor__inherit__graph.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classObiektGraficzny__inherit__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classObiektGraficzny__inherit__graph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classSWektor__coll__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classSWektor__coll__graph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classRobot_aa0c5484b7c68b62f88c606aaee7f1186_cgraph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classRobot_aa0c5484b7c68b62f88c606aaee7f1186_cgraph.png"'
 sh: 1: dot: not found
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classSciezka__inherit__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classSciezka__inherit__graph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/ZbiorWierzcholkow_8hh__dep__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/ZbiorWierzcholkow_8hh__dep__incl.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classRobot_a5fee7a53e5228e5abf0fdb399d36ff6c_cgraph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classRobot_a5fee7a53e5228e5abf0fdb399d36ff6c_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Robot_8hh__dep__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Robot_8hh__dep__incl.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classRobot__coll__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classRobot__coll__graph.png"'
 sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/Sciezka_8hh__dep__incl.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/Sciezka_8hh__dep__incl.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classRobot_adfa008229119f7ebba4356ab0f162ba3_cgraph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classRobot_adfa008229119f7ebba4356ab0f162ba3_cgraph.png"'
+sh: 1: dot: not found
+sh: 1: error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classRobot__inherit__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classRobot__inherit__graph.png"'
+dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classRobot_a67f4198e7258be6aa7914369ceccce09_cgraph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classRobot_a67f4198e7258be6aa7914369ceccce09_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classSciezka__inherit__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classSciezka__inherit__graph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classScena__coll__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classScena__coll__graph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classScena_a4b8ace65b32937b21e4ca7837b70d7b9_cgraph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classScena_a4b8ace65b32937b21e4ca7837b70d7b9_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classSciezka_a1bd5d92a611df435746d48568b8c11e1_cgraph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classSciezka_a1bd5d92a611df435746d48568b8c11e1_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classRobot_a2adf76f32f693ba920f6fc255c25ea9d_cgraph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classRobot_a2adf76f32f693ba920f6fc255c25ea9d_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classSciezka_a76862304460e6a2759f4e1085482cb9d_cgraph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classSciezka_a76862304460e6a2759f4e1085482cb9d_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classScena_ab4c786d9def8a483b9873c27b5bd7f13_cgraph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classScena_ab4c786d9def8a483b9873c27b5bd7f13_cgraph.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classZbiorWierzcholkow__inherit__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classZbiorWierzcholkow__inherit__graph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classSciezka_a95e9a0c51da72e4bd4edcca9f9ea7de4_cgraph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classSciezka_a95e9a0c51da72e4bd4edcca9f9ea7de4_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classZbiorWierzcholkow__coll__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classZbiorWierzcholkow__coll__graph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classSWektor__coll__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classSWektor__coll__graph.png"'
+sh: 1: dot: not found
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_1.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_1.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_2.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_2.png"'
-sh: 1: dot: not found
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classZbiorWierzcholkow__coll__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classZbiorWierzcholkow__coll__graph.png"'
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_3.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_3.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_6.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_6.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_4.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_4.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_5.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_5.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classSciezka__coll__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classSciezka__coll__graph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/graph_legend.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/graph_legend.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_0.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_0.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/graph_legend.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/graph_legend.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_3.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_3.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_5.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_5.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/classSWektor__inherit__graph.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/classSWektor__inherit__graph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_4.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_4.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_2.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_2.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_6.dot" -Tpng -o "/home/starmarek/Desktop/Robot-z5-master/html/inherit_graph_6.png"'
 error: problems opening map file /home/starmarek/Desktop/Robot-z5-master/html/lacze__do__gnuplota_8cpp__incl.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
@@ -195,13 +199,19 @@ try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/starmarek/Desktop/Robot-z5-master/html/classRobot__coll__graph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/starmarek/Desktop/Robot-z5-master/html/classRobot_aa0c5484b7c68b62f88c606aaee7f1186_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/starmarek/Desktop/Robot-z5-master/html/classRobot_a5fee7a53e5228e5abf0fdb399d36ff6c_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/starmarek/Desktop/Robot-z5-master/html/classRobot_a8a16f8744aa8d38dfe88216633ec0a90_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/starmarek/Desktop/Robot-z5-master/html/classRobot_a67f4198e7258be6aa7914369ceccce09_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/starmarek/Desktop/Robot-z5-master/html/classRobot_a97732ffbe82011996c67efb27cb08402_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/starmarek/Desktop/Robot-z5-master/html/classRobot_adfa008229119f7ebba4356ab0f162ba3_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/starmarek/Desktop/Robot-z5-master/html/classRobot_a2adf76f32f693ba920f6fc255c25ea9d_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/starmarek/Desktop/Robot-z5-master/html/classScena__coll__graph.map for inclusion in the docs!
@@ -219,7 +229,7 @@ try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/starmarek/Desktop/Robot-z5-master/html/classSciezka__coll__graph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
-error: problems opening map file /home/starmarek/Desktop/Robot-z5-master/html/classSciezka_a95e9a0c51da72e4bd4edcca9f9ea7de4_cgraph.map for inclusion in the docs!
+error: problems opening map file /home/starmarek/Desktop/Robot-z5-master/html/classSciezka_a76862304460e6a2759f4e1085482cb9d_cgraph.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
 error: problems opening map file /home/starmarek/Desktop/Robot-z5-master/html/classSciezka_a1bd5d92a611df435746d48568b8c11e1_cgraph.map for inclusion in the docs!

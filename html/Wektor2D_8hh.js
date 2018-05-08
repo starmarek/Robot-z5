@@ -1,4 +1,4 @@
 var Wektor2D_8hh =
 [
-    [ "Wektor2D", "Wektor2D_8hh.html#a92d8ba4c03b258c2229a1442b5bcd975", null ]
+    [ "Wektor2D", "Wektor2D_8hh.html#ae41945f3ef55a0d466f1a9d6b6e02d5b", null ]
 ];

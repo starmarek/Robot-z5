@@ -5,7 +5,7 @@
  * \file
  * \brief Definicja klasy Sciezka.
  *
- * Plik zawiera definicję klasy Scieza.
+ * Plik zawiera definicję klasy Sciezka.
  */
 
 #include "ObiektGraficzny.hh"
@@ -13,7 +13,7 @@
 /*!
  * \brief Modeluje linię ciągnącą się za robotem.
  *
- * Klasa modeluje linię, czyli zbiór punktów które są łączone w programie gnuplot.
+ * Klasa modeluje linię, czyli zbiór punktów które są łączone w programie \e gnuplot.
  */
 class Sciezka : public ObiektGraficzny
 {
@@ -21,12 +21,12 @@ class Sciezka : public ObiektGraficzny
 public:
 
     /*!
-     * \brief Konstruktor inicjalizujący pierwszy punkt linii.
+     * \brief Inicjalizuje pierwszy punkt linii.
      */
     void DodajPierwszyPunkt(double a, double b);
 
     /*!
-     * \brief Funkcja rysująca linie
+     * \brief Metoda rysująca linię.
      */
     void RysujSciezke(Wektor2D pol);
 };

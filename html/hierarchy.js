@@ -8,7 +8,7 @@ var hierarchy =
     ] ],
     [ "Scena", "classScena.html", null ],
     [ "SWektor< STyp, SWymiar >", "classSWektor.html", null ],
-    [ "SWektor< float, 2 >", "classSWektor.html", null ],
+    [ "SWektor< double, 2 >", "classSWektor.html", null ],
     [ "vector", null, [
       [ "ZbiorWierzcholkow", "classZbiorWierzcholkow.html", null ]
     ] ]
