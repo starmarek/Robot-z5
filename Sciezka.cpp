@@ -15,10 +15,11 @@
  * \param a - X'owa współrzędna wektora.
  * \param b - Y'owa współrzędna wektora.
  */
-void Sciezka::DodajPierwszyPunkt(double a, double b)
+
+void Sciezka::DodajPierwszyPunkt(double a, double b, std::string g)
 {
     _TabWierz.DodajWierzcholek(a, b);
-    ZapiszDoPliku("figury/sciezka.dat");
+    ZapiszDoPliku(g.c_str());
 }
 
 /*!
@@ -27,8 +28,8 @@ void Sciezka::DodajPierwszyPunkt(double a, double b)
  * \param pol - Współrzędne kolejnego punktu linii, podane na podstawie
  * aktualnego położenia robota.
  */
-void Sciezka::RysujSciezke(Wektor2D pol)
+void Sciezka::RysujSciezke(Wektor2D pol, std::string g)
 {
     _TabWierz.DodajWierzcholek(pol[0], pol[1]);
-    ZapiszDoPliku("figury/sciezka.dat");
+    ZapiszDoPliku(g.c_str());
 }

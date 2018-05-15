@@ -35,7 +35,7 @@ class Robot : public ObiektGraficzny
      * Dzięki tej zmiennej możemy rysować na bierząco robota i  ścieżke
      * w programie \e gnuplot.
      */
-    PzG::LaczeDoGNUPlota lacze;
+    PzG::LaczeDoGNUPlota * wsklacze;
 
     /*!
      * \brief Osobista ścieżka danego robota.
@@ -53,7 +53,29 @@ class Robot : public ObiektGraficzny
      */
     double szybkosc = 1;
 
+    double Alpha;
+
 public:
+
+    Robot(PzG::LaczeDoGNUPlota * lacznik)
+    {
+        this->wsklacze = lacznik;
+
+        ++Indeks;
+
+        Nazwa += "Robot" + std::to_string(Indeks) + ".dat";
+
+        NazwaSciezki += "Sciezka" + std::to_string(Indeks) + ".dat";
+
+        wsklacze->DodajNazwePliku(Nazwa.c_str(), PzG::RR_Ciagly, 3);
+        wsklacze->ZmienTrybRys(PzG::TR_2D);
+
+        wsklacze->DodajNazwePliku(NazwaSciezki.c_str(), PzG::RR_Ciagly,2);
+        wsklacze->ZmienTrybRys(PzG::TR_2D);
+
+       //ZapiszDoPliku(Nazwa.c_str());
+
+    }
 
     /*!
      * \brief Metoda zmieniająca szybkosc robota.

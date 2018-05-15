@@ -9,6 +9,7 @@
  */
 
 #include "ZbiorWierzcholkow.hh"
+#include "lacze_do_gnuplota.hh"
 
 /*!
  * \brief Modeluje obiekt, który ma swoją reprezentację graficzną
@@ -42,7 +43,12 @@ protected:
     /*!
      * Przechowuje kąt o jaki jest aktualnie obrócony obikekt.
      */
-    double Alpha;
+
+    int Indeks = 0;
+
+    std::string Nazwa = "figury/";
+
+    std::string NazwaSciezki = "figury/";
 
 public:
 

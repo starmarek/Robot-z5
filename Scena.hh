@@ -9,6 +9,9 @@
  */
 
 #include "Robot.hh"
+#include "Przeszkoda.hh"
+#include <memory>
+#include <list>
 
 /*!
  * \brief Klasa modelująca pojęcie Sceny.
@@ -26,13 +29,13 @@ class Scena
      */
     PzG::LaczeDoGNUPlota lacze;
 
-    /*!
-     * \brief Robot pojawiający się na scenie.
-     *
-     * Zmienna przechowująca informacje o robocie znajdującym się na scenie i służca
-     * do wykonywania na nim operacji.
-     */
-    Robot R;
+    //std::list < std::shared_ptr <ObiektGraficzny> > LObiektow;
+
+    std::list < std::shared_ptr <Robot> > LRobotow;
+    std::list < std::shared_ptr <Robot> > :: iterator Rit = LRobotow.begin();
+
+    std::list < std::shared_ptr <Przeszkoda> > LPrzeszkod;
+    std::list < std::shared_ptr <Przeszkoda> > :: iterator Pit = LPrzeszkod.begin();
 
 public:
 
@@ -46,6 +49,11 @@ public:
      * \brief Uruchamia, kończy i kontroluje przebieg działania programu.
      */
     void Run();
+    void DodajRobota();
+    void DodajPrzeszkode();
+
+
+
 };
 
 #endif

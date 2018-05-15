@@ -69,15 +69,15 @@ int Robot::obroc(double b)
         if(tmp - i < 1)
         {
             Obrot((tmp - i) * szybkosc);
-            ZapiszDoPliku("figury/robot.dat");
-            lacze.Rysuj();
+            ZapiszDoPliku(Nazwa.c_str());
+            wsklacze->Rysuj();
             usleep(40000);
             return 0;
         }
 
         Obrot(szybkosc);
-        ZapiszDoPliku("figury/robot.dat");
-        lacze.Rysuj();
+        ZapiszDoPliku(Nazwa.c_str());
+        wsklacze->Rysuj();
         usleep(40000);
     }
     return 0;
@@ -96,7 +96,7 @@ void Robot::InicjalizujKsztalt()
     _TabWierz.DodajWierzcholek(0, 30);
     _TabWierz.DodajWierzcholek(30, 0);
 
-    ZapiszDoPliku("figury/robot.dat");
+    ZapiszDoPliku(Nazwa.c_str());
 }
 
 /*!
@@ -108,9 +108,9 @@ void Robot::DodajRobota()
 {
     std::cout << "Podaj wspolrzedne srodka robota aby go stworzyc: " << std::endl;
     std::cin >> _PolozenieObiektu[0] >> _PolozenieObiektu[1];
-    ZapiszDoPliku("figury/robot.dat");
-    sciezkowy.DodajPierwszyPunkt(_PolozenieObiektu[0], _PolozenieObiektu[1]);
-    lacze.Rysuj();
+    ZapiszDoPliku(Nazwa.c_str());
+    sciezkowy.DodajPierwszyPunkt(_PolozenieObiektu[0], _PolozenieObiektu[1], NazwaSciezki);
+    wsklacze->Rysuj();
 }
 
 /*!
@@ -142,16 +142,16 @@ int Robot::JedzProsto(double dlugosc)
         if(tmp - i < 1)
         {
            PoruszOWektor(wektorPrzemieszczenia * ((tmp - i) * szybkosc));
-           ZapiszDoPliku("figury/robot.dat");
-           sciezkowy.RysujSciezke(_PolozenieObiektu);
-           lacze.Rysuj();
+           ZapiszDoPliku(Nazwa.c_str());
+           sciezkowy.RysujSciezke(_PolozenieObiektu, NazwaSciezki);
+           wsklacze->Rysuj();
            usleep(40000);
            return 0;
         }
         PoruszOWektor(wektorPrzemieszczenia * szybkosc);
-        ZapiszDoPliku("figury/robot.dat");
-        sciezkowy.RysujSciezke(_PolozenieObiektu);
-        lacze.Rysuj();
+        ZapiszDoPliku(Nazwa.c_str());
+        sciezkowy.RysujSciezke(_PolozenieObiektu, NazwaSciezki);
+        wsklacze->Rysuj();
         usleep(40000);
     }
     return 0;
@@ -173,6 +173,6 @@ void Robot::Skaluj(double w)
         _TabWierz[i][1] *= w;
     }
     skala = w;
-    ZapiszDoPliku("figury/robot.dat");
-    lacze.Rysuj();
+    ZapiszDoPliku(Nazwa.c_str());
+    wsklacze->Rysuj();
 }

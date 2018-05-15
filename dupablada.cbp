@@ -21,6 +21,8 @@
 		</Compiler>
 		<Unit filename="ObiektGraficzny.cpp" />
 		<Unit filename="ObiektGraficzny.hh" />
+		<Unit filename="Przeszkoda.cpp" />
+		<Unit filename="Przeszkoda.hh" />
 		<Unit filename="Robot.cpp" />
 		<Unit filename="Robot.hh" />
 		<Unit filename="SWektor.hh" />
