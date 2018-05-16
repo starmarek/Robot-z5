@@ -128,7 +128,7 @@
 1525546914 source:/home/starmarek/Desktop/Robot-z5-master/main.cpp
 	"Scena.hh"
 
-1526460999 /home/starmarek/Desktop/Robot-z5-master/Scena.hh
+1526475043 /home/starmarek/Desktop/Robot-z5-master/Scena.hh
 	"Robot.hh"
 	"Przeszkoda.hh"
 	<memory>
@@ -166,7 +166,7 @@
 1526461181 source:/home/starmarek/Desktop/Robot-z5-master/Robot.cpp
 	"Robot.hh"
 
-1526461206 source:/home/starmarek/Desktop/Robot-z5-master/Scena.cpp
+1526474322 source:/home/starmarek/Desktop/Robot-z5-master/Scena.cpp
 	"Scena.hh"
 
 1526421004 source:/home/starmarek/Desktop/Robot-z5-master/Sciezka.cpp
@@ -178,6 +178,6 @@
 1526459521 source:/home/starmarek/Desktop/Robot-z5-master/Przeszkoda.cpp
 	"Przeszkoda.hh"
 
-1526459014 /home/starmarek/Desktop/Robot-z5-master/Przeszkoda.hh
+1526472595 /home/starmarek/Desktop/Robot-z5-master/Przeszkoda.hh
 	"ObiektGraficzny.hh"
 

@@ -23,7 +23,7 @@ void Scena::WyswietlMenu()
     std::cout << "k -> Zakonczenie dzialania programu" << std::endl;
 }
 
-void Scena::DodajRobota()
+void Scena::DodajRoboty()
 {
     std::shared_ptr <Robot> p(new Robot(&lacze));
 
@@ -81,30 +81,53 @@ void Scena::DodajPrzeszkody()
     Pit->get()->DodajPrzeszkode3();
 }
 
+
 void Scena::JakiRobot()
 {
-    int ktory = std::distance(Rit, LRobotow.begin());
-    std::cout << std::endl << "Numer aktualnie wybranego robota: "<< ++ktory << std::endl;
-    std::cout << "Wspolrzedne srodka aktualnie wybranego robota:" << Rit->get()->ZwrocPolozenie() << std::endl << std::endl;
+    int ktory = std::distance(LRobotow.begin(), Rit);
+    std::cout << std::endl << std::endl << "Aktualnie wyselekscjonowanym robotem jest: "<< std::endl << "Robot " << ++ktory << ". \t";
+    std::cout << "Wspolrzedne: " << Rit->get()->ZwrocPolozenie() << std::endl << std::endl;
 }
+
+
+void Scena::WyborRobota()
+{
+    unsigned int w;
+    std::cout << std::endl << "Aktualnie aktywne roboty: " << std::endl;
+    Rit = LRobotow.begin();
+
+    for(unsigned int i = 1; i <= LRobotow.size(); ++i)
+    {
+        std::cout << "Robot " << i << "\t Wspolrzedne: " << Rit->get()->ZwrocPolozenie() << std::endl;
+        if ((Rit != LRobotow.end()) && (next(Rit) == LRobotow.end())) break;
+        Rit++;
+    }
+
+    std::cout << "Prosze wybrac robota: " << std::endl;
+    std::cin >> w;
+    Rit = LRobotow.begin();
+
+    for(unsigned int i = 1; i < w; ++i)
+    {
+        ++Rit;
+        std::cout << "Jestem" << std::endl;
+    }
+}
+
 
 /*!
  * Jest jako jedyna, jawnie wywoływana w funkcji \e main. Inicjalizuje cały przebieg działania prgramu. Posiada
  * menu do komunikacji z użytkownikiem w postaci \e switch'a, który jest uodporniony na podanie opcji, która nie jest
  * obsługiwana.
  */
-void Scena::Run()
+
+
+void Scena::Menu()
 {
     char znak;
-    DodajRobota();
-    DodajPrzeszkody();
-    lacze.Rysuj();
-
     std::cout << std::endl << "---------------Centrum Sterowania Robotem--------------------" << std::endl << std::endl;
     WyswietlMenu();
-
-
-    while(znak != 'k')
+    do
     {
         JakiRobot();
         std::cin >> znak;
@@ -141,7 +164,7 @@ void Scena::Run()
             break;
 
         case 'g':
-
+            WyborRobota();
             break;
 
         default:
@@ -156,5 +179,15 @@ void Scena::Run()
             }
             break;
         }
-    }
+    }while(znak != 'k');
+
+}
+
+
+void Scena::Run()
+{
+    DodajRoboty();
+    DodajPrzeszkody();
+    lacze.Rysuj();
+    Menu();
 }

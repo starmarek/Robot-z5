@@ -49,9 +49,11 @@ public:
      * \brief Uruchamia, kończy i kontroluje przebieg działania programu.
      */
     void Run();
-    void DodajRobota();
+    void DodajRoboty();
     void DodajPrzeszkody();
     void JakiRobot();
+    void WyborRobota();
+    void Menu();
 };
 
 #endif
