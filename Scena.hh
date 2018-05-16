@@ -50,10 +50,8 @@ public:
      */
     void Run();
     void DodajRobota();
-    void DodajPrzeszkode();
-
-
-
+    void DodajPrzeszkody();
+    void JakiRobot();
 };
 
 #endif

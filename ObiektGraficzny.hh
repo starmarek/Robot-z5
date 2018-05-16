@@ -44,7 +44,6 @@ protected:
      * Przechowuje kąt o jaki jest aktualnie obrócony obikekt.
      */
 
-    int Indeks = 0;
 
     std::string Nazwa = "figury/";
 

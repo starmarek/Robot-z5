@@ -34,9 +34,27 @@ void Scena::DodajRobota()
     Rit->get()->InicjalizujKsztalt();
     Rit->get()->DodajRobota();
 
+    std::shared_ptr <Robot> q(new Robot(&lacze));
+
+    LRobotow.push_back(q);
+
+    ++Rit;
+
+    Rit->get()->InicjalizujKsztalt();
+    Rit->get()->DodajRobota();
+
+    std::shared_ptr <Robot> d(new Robot(&lacze));
+
+    LRobotow.push_back(d);
+
+    ++Rit;
+
+    Rit->get()->InicjalizujKsztalt();
+    Rit->get()->DodajRobota();
+
 }
 
-void Scena::DodajPrzeszkode()
+void Scena::DodajPrzeszkody()
 {
     std::shared_ptr <Przeszkoda> p(new Przeszkoda(&lacze));
 
@@ -46,6 +64,28 @@ void Scena::DodajPrzeszkode()
 
     Pit->get()->DodajPrzeszkode1();
 
+    std::shared_ptr <Przeszkoda> q(new Przeszkoda(&lacze));
+
+    LPrzeszkod.push_back(q);
+
+    ++Pit;
+
+    Pit->get()->DodajPrzeszkode2();
+
+    std::shared_ptr <Przeszkoda> d(new Przeszkoda(&lacze));
+
+    LPrzeszkod.push_back(d);
+
+    ++Pit;
+
+    Pit->get()->DodajPrzeszkode3();
+}
+
+void Scena::JakiRobot()
+{
+    int ktory = std::distance(Rit, LRobotow.begin());
+    std::cout << std::endl << "Numer aktualnie wybranego robota: "<< ++ktory << std::endl;
+    std::cout << "Wspolrzedne srodka aktualnie wybranego robota:" << Rit->get()->ZwrocPolozenie() << std::endl << std::endl;
 }
 
 /*!
@@ -57,14 +97,16 @@ void Scena::Run()
 {
     char znak;
     DodajRobota();
-    DodajPrzeszkode();
+    DodajPrzeszkody();
+    lacze.Rysuj();
 
     std::cout << std::endl << "---------------Centrum Sterowania Robotem--------------------" << std::endl << std::endl;
-
     WyswietlMenu();
+
 
     while(znak != 'k')
     {
+        JakiRobot();
         std::cin >> znak;
 
         switch(znak)
@@ -96,6 +138,10 @@ void Scena::Run()
             std::cout << "Podaj wartosc do skalowania robota:  " << std::endl;
             std::cin >> a;
             Rit->get()->Skaluj(a);
+            break;
+
+        case 'g':
+
             break;
 
         default:

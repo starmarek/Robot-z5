@@ -11,6 +11,7 @@
 
 using namespace std;
 
+
 /*!
  * Zapisuje do strumienia współrzędne globalne wierzchołków
  * obrysu obiektu.

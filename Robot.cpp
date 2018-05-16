@@ -8,6 +8,8 @@
 
 #include "Robot.hh"
 
+int Robot::Indeks;
+
 /*!
  * Pobiera od użytkownika nową wartość szybkości i nadpisuje aktualną.
  */
@@ -110,7 +112,7 @@ void Robot::DodajRobota()
     std::cin >> _PolozenieObiektu[0] >> _PolozenieObiektu[1];
     ZapiszDoPliku(Nazwa.c_str());
     sciezkowy.DodajPierwszyPunkt(_PolozenieObiektu[0], _PolozenieObiektu[1], NazwaSciezki);
-    wsklacze->Rysuj();
+    //wsklacze->Rysuj();
 }
 
 /*!
@@ -175,4 +177,28 @@ void Robot::Skaluj(double w)
     skala = w;
     ZapiszDoPliku(Nazwa.c_str());
     wsklacze->Rysuj();
+}
+
+
+Robot::Robot(PzG::LaczeDoGNUPlota * lacznik)
+{
+    this->wsklacze = lacznik;
+
+    ++Robot::Indeks;
+
+    Nazwa += "Robot" + std::to_string(Robot::Indeks) + ".dat";
+
+    NazwaSciezki += "Sciezka" + std::to_string(Robot::Indeks) + ".dat";
+
+    wsklacze->DodajNazwePliku(Nazwa.c_str(), PzG::RR_Ciagly, 3);
+    wsklacze->ZmienTrybRys(PzG::TR_2D);
+
+    wsklacze->DodajNazwePliku(NazwaSciezki.c_str(), PzG::RR_Ciagly,2);
+    wsklacze->ZmienTrybRys(PzG::TR_2D);
+}
+
+Wektor2D Robot::ZwrocPolozenie()
+{
+
+    return _PolozenieObiektu;
 }

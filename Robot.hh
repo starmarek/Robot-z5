@@ -55,27 +55,11 @@ class Robot : public ObiektGraficzny
 
     double Alpha;
 
+    static int Indeks;
+
 public:
 
-    Robot(PzG::LaczeDoGNUPlota * lacznik)
-    {
-        this->wsklacze = lacznik;
-
-        ++Indeks;
-
-        Nazwa += "Robot" + std::to_string(Indeks) + ".dat";
-
-        NazwaSciezki += "Sciezka" + std::to_string(Indeks) + ".dat";
-
-        wsklacze->DodajNazwePliku(Nazwa.c_str(), PzG::RR_Ciagly, 3);
-        wsklacze->ZmienTrybRys(PzG::TR_2D);
-
-        wsklacze->DodajNazwePliku(NazwaSciezki.c_str(), PzG::RR_Ciagly,2);
-        wsklacze->ZmienTrybRys(PzG::TR_2D);
-
-       //ZapiszDoPliku(Nazwa.c_str());
-
-    }
+    Robot(PzG::LaczeDoGNUPlota * lacznik);
 
     /*!
      * \brief Metoda zmieniająca szybkosc robota.
@@ -112,6 +96,8 @@ public:
      * \brief Metoda wyświetlająca robota w zadanym przez użytkownika położeniu.
      */
     void DodajRobota();
+
+    Wektor2D ZwrocPolozenie();
 };
 
 #endif
