@@ -10,6 +10,8 @@
 
 #include "ZbiorWierzcholkow.hh"
 #include "lacze_do_gnuplota.hh"
+#include <memory>
+#include <list>
 
 /*!
  * \brief Modeluje obiekt, który ma swoją reprezentację graficzną
@@ -20,6 +22,7 @@
  * ograniczona. Jedynym ograniczeniem jest dostępność pamięci
  * komputera.
  */
+
 class ObiektGraficzny
 {
 
@@ -31,26 +34,36 @@ protected:
      *  Zawiera współrzędne punktu względem, którego podane są
      *  współrzędne punktów obrysu obiektu.
      */
-    Wektor2D   _PolozenieObiektu;
+
 
     /*!
      * \brief Tablica wierzchołków
      *
      * Zawiera współrzędne wierzchołków obiektów graficznych.
      */
-    ZbiorWierzcholkow _TabWierz;
+
 
     /*!
-     * Przechowuje kąt o jaki jest aktualnie obrócony obikekt.
+     * \brief Przechowuje nazwe do zapisu do pliku.
+     *
+     * Przechowuje nazwe do zapisu danego robota lub przeszkody.
      */
 
 
-    std::string Nazwa = "figury/";
-
+    /*!
+     * \brief Przechowuje nazwe do zapisu do pliku.
+     *
+     * Przechowuje nazwe do zapisu ścieżki, należącej do danego robota.
+     */
     std::string NazwaSciezki = "figury/";
 
-public:
 
+
+public:
+std::string Nazwa = "figury/";
+Wektor2D   _PolozenieObiektu;
+ZbiorWierzcholkow _TabWierz;
+double Promien;
     /*!
      * \brief Metoda zmieniająca aktualne położenie obiektu
      */
@@ -65,6 +78,8 @@ public:
      * \brief Metoda zapisuje do strumienia współrzędne wierzchołków
      */
     bool ZapiszDoStrumienia(std::ostream& StrmWy) const;
+
+    virtual bool Kolizja(ObiektGraficzny R) { std:: cout << "To nie tak, bo bazowa!"; return 0; }
 };
 
 #endif

@@ -25,4 +25,10 @@ void ZbiorWierzcholkow::DodajWierzcholek(double a, double c)
     }
 
 
+Wektor2D ZbiorWierzcholkow::ZwrocWierzcholek()
+{
+    return (*end());
+}
+
+
 

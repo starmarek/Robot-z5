@@ -1,9 +1,8 @@
 /*!
  * \file
- * \brief Zawiera definicje metod klasy Scena, oraz funkcji inicjalizującej plik z wektorami aktualnymi.
+ * \brief Zawiera definicje metod klasy Scena.
  *
- * Zawiera definicje metod klasy Scena, oraz funkcji inicjalizującej plik z wektorami aktualnymi
- * wraz z ich opisem.
+ * Zawiera definicje metod klasy Scena, wraz z ich opisem.
  */
 
 #include "Scena.hh"
@@ -25,68 +24,79 @@ void Scena::WyswietlMenu()
 
 void Scena::DodajRoboty()
 {
-    std::shared_ptr <Robot> p(new Robot(&lacze));
+    std::shared_ptr <Robot> r(new Robot(&lacze));
+    std::shared_ptr <ObiektGraficzny> ro(r);
 
-    LRobotow.push_back(p);
-
-    ++Rit;
-
-    Rit->get()->InicjalizujKsztalt();
-    Rit->get()->DodajRobota();
-
-    std::shared_ptr <Robot> q(new Robot(&lacze));
-
-    LRobotow.push_back(q);
+    LRobotow.push_back(r);
+    LObiektow.push_back(ro);
 
     ++Rit;
 
-    Rit->get()->InicjalizujKsztalt();
-    Rit->get()->DodajRobota();
+    (*Rit)->InicjalizujKsztalt();
+    (*Rit)->DodajRobota();
 
-    std::shared_ptr <Robot> d(new Robot(&lacze));
+    std::shared_ptr <Robot> r1(new Robot(&lacze));
+    std::shared_ptr <ObiektGraficzny> ro1(r1);
 
-    LRobotow.push_back(d);
+    LRobotow.push_back(r1);
+    LObiektow.push_back(ro1);
 
     ++Rit;
 
-    Rit->get()->InicjalizujKsztalt();
-    Rit->get()->DodajRobota();
+    (*Rit)->InicjalizujKsztalt();
+    (*Rit)->DodajRobota();
+
+    std::shared_ptr <Robot> r2(new Robot(&lacze));
+    std::shared_ptr <ObiektGraficzny> ro2(r2);
+
+    LRobotow.push_back(r2);
+    LObiektow.push_back(ro2);
+
+    ++Rit;
+
+    (*Rit)->InicjalizujKsztalt();
+    (*Rit)->DodajRobota();
 
 }
 
 void Scena::DodajPrzeszkody()
 {
     std::shared_ptr <Przeszkoda> p(new Przeszkoda(&lacze));
+    std::shared_ptr <ObiektGraficzny> po(p);
 
     LPrzeszkod.push_back(p);
+    LObiektow.push_back(po);
 
     ++Pit;
 
-    Pit->get()->DodajPrzeszkode1();
+    (*Pit)->DodajPrzeszkode1();
 
-    std::shared_ptr <Przeszkoda> q(new Przeszkoda(&lacze));
+    std::shared_ptr <Przeszkoda> p1(new Przeszkoda(&lacze));
+    std::shared_ptr <ObiektGraficzny> po1(p1);
 
-    LPrzeszkod.push_back(q);
-
-    ++Pit;
-
-    Pit->get()->DodajPrzeszkode2();
-
-    std::shared_ptr <Przeszkoda> d(new Przeszkoda(&lacze));
-
-    LPrzeszkod.push_back(d);
+    LPrzeszkod.push_back(p1);
+    LObiektow.push_back(po1);
 
     ++Pit;
 
-    Pit->get()->DodajPrzeszkode3();
+    (*Pit)->DodajPrzeszkode2();
+
+    std::shared_ptr <Przeszkoda> p2(new Przeszkoda(&lacze));
+    std::shared_ptr <ObiektGraficzny> po2(p2);
+
+    LPrzeszkod.push_back(p2);
+    LObiektow.push_back(po2);
+
+    ++Pit;
+
+    (*Pit)->DodajPrzeszkode3();
 }
-
 
 void Scena::JakiRobot()
 {
     int ktory = std::distance(LRobotow.begin(), Rit);
     std::cout << std::endl << std::endl << "Aktualnie wyselekscjonowanym robotem jest: "<< std::endl << "Robot " << ++ktory << ". \t";
-    std::cout << "Wspolrzedne: " << Rit->get()->ZwrocPolozenie() << std::endl << std::endl;
+    std::cout << "Wspolrzedne: " << (*Rit)->ZwrocPolozenie() << std::endl << std::endl;
 }
 
 
@@ -98,7 +108,7 @@ void Scena::WyborRobota()
 
     for(unsigned int i = 1; i <= LRobotow.size(); ++i)
     {
-        std::cout << "Robot " << i << "\t Wspolrzedne: " << Rit->get()->ZwrocPolozenie() << std::endl;
+        std::cout << "Robot " << i << "\t Wspolrzedne: " << (*Rit)->ZwrocPolozenie() << std::endl;
         if ((Rit != LRobotow.end()) && (next(Rit) == LRobotow.end())) break;
         Rit++;
     }
@@ -138,7 +148,7 @@ void Scena::Menu()
             int tmp;
             std::cout << "Podaj odleglosc (ilosc jednostek) na jaka ma sie przemiescic robot: \n";
             std::cin >> tmp;
-            Rit->get()->JedzProsto(tmp);
+            (*Rit)->JedzProsto(tmp, LObiektow);
             break;
 
         case 'w':
@@ -146,21 +156,21 @@ void Scena::Menu()
             break;
 
         case 'z':
-            Rit->get()->ZmienSzybkosc();
+            (*Rit)->ZmienSzybkosc();
             break;
 
         case 'o':
             int tm;
             std::cout << "Podaj kat o jaki ma sie obrocic robot: \n";
             std::cin >> tm;
-            Rit->get()->obroc(tm);
+            (*Rit)->obroc(tm);
             break;
 
         case 's':
             double a;
             std::cout << "Podaj wartosc do skalowania robota:  " << std::endl;
             std::cin >> a;
-            Rit->get()->Skaluj(a);
+            (*Rit)->Skaluj(a);
             break;
 
         case 'g':

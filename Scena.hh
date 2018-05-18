@@ -3,9 +3,9 @@
 
 /*!
  * \file
- * \brief Definicja klasy Scena i funkcji inicjalizującej zapis wektrów.
+ * \brief Definicja klasy Scena.
  *
- * Plik zawiera definicję klasy Scena, i funkcji która inicjalizuje plik \e wierzchołkiAktualne.dat.
+ * Plik zawiera definicję klasy Scena.
  */
 
 #include "Robot.hh"
@@ -29,7 +29,7 @@ class Scena
      */
     PzG::LaczeDoGNUPlota lacze;
 
-    //std::list < std::shared_ptr <ObiektGraficzny> > LObiektow;
+    std::list < std::shared_ptr <ObiektGraficzny> > LObiektow;
 
     std::list < std::shared_ptr <Robot> > LRobotow;
     std::list < std::shared_ptr <Robot> > :: iterator Rit = LRobotow.begin();

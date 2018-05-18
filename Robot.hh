@@ -1,6 +1,7 @@
 #ifndef ROBOT_HH
 #define ROBOT_HH
 
+
 /*!
  * \file
  * \brief Definicja klasy Robot.
@@ -8,11 +9,17 @@
  * Plik zawiera definicję klasy Robot.
  */
 
+
 #include <math.h>
 #include <unistd.h>
+#include <memory>
+#include <list>
 #include "ObiektGraficzny.hh"
 #include "lacze_do_gnuplota.hh"
 #include "Sciezka.hh"
+
+
+
 
 /*!
  * \brief Modeluje Robota którym będziemy poruszać po scenie.
@@ -22,6 +29,7 @@
  */
 class Robot : public ObiektGraficzny
 {
+
     /*!
      * \brief Skala wielkości robota.
      *
@@ -29,13 +37,14 @@ class Robot : public ObiektGraficzny
      */
     double skala = 1;
 
+
     /*!
-     * \brief Zmienna potrzebna do komunikacji z programem \e gnuplot.
+     * \brief Wskaznik na lacze.
      *
-     * Dzięki tej zmiennej możemy rysować na bierząco robota i  ścieżke
-     * w programie \e gnuplot.
+     * Służy do komunikacji z polem 'lacze' w klasie Scena.
      */
     PzG::LaczeDoGNUPlota * wsklacze;
+
 
     /*!
      * \brief Osobista ścieżka danego robota.
@@ -43,6 +52,7 @@ class Robot : public ObiektGraficzny
      * Zmienna dzięki której możemy rysować ścieżkę podczas ruchu robota.
      */
     Sciezka sciezkowy;
+
 
     /*!
      * \brief Osobista szybkosc animacji danego robota.
@@ -53,8 +63,16 @@ class Robot : public ObiektGraficzny
      */
     double szybkosc = 1;
 
+
+
     double Alpha;
 
+
+    /*!
+     * \brief Zmienna indeksująca roboty.
+     *
+     * Zmienna służąca do indeksowania plików do zapisu robotów.
+     */
     static int Indeks;
 
 public:
@@ -85,7 +103,7 @@ public:
      * \brief Metoda przemieszczająca robota na podaną odległość,
      *  posiadająca już wbudowaną animację.
      */
-    int JedzProsto(double dlugosc);
+    int JedzProsto(double dlugosc, std::list < std::shared_ptr <ObiektGraficzny> > lista);
 
     /*!
      * \brief Metoda skalująca robota.
@@ -98,6 +116,8 @@ public:
     void DodajRobota();
 
     Wektor2D ZwrocPolozenie();
+
+    bool Kolizja(ObiektGraficzny R);
 };
 
 #endif

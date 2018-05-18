@@ -112,7 +112,6 @@ void Robot::DodajRobota()
     std::cin >> _PolozenieObiektu[0] >> _PolozenieObiektu[1];
     ZapiszDoPliku(Nazwa.c_str());
     sciezkowy.DodajPierwszyPunkt(_PolozenieObiektu[0], _PolozenieObiektu[1], NazwaSciezki);
-    //wsklacze->Rysuj();
 }
 
 /*!
@@ -131,7 +130,7 @@ void Robot::DodajRobota()
  * \param dlugosc - ilosc jednostek na skali sceny, o które ma się przesunąć robot względem swojego
  * aktualnego położenia.
  */
-int Robot::JedzProsto(double dlugosc)
+int Robot::JedzProsto(double dlugosc, std::list < std::shared_ptr <ObiektGraficzny> > lista)
 {
     Wektor2D wektorPrzemieszczenia;
     double tmp = dlugosc / szybkosc;
@@ -148,6 +147,14 @@ int Robot::JedzProsto(double dlugosc)
            sciezkowy.RysujSciezke(_PolozenieObiektu, NazwaSciezki);
            wsklacze->Rysuj();
            usleep(40000);
+           for(std::list < std::shared_ptr <ObiektGraficzny> > :: iterator it = lista.begin(); it != lista.end(); ++it)
+            {
+                if((*it)->Kolizja(*this))
+                {
+                    std::cout << "git w chuj";
+                    return 0;
+                }
+            }
            return 0;
         }
         PoruszOWektor(wektorPrzemieszczenia * szybkosc);
@@ -155,6 +162,14 @@ int Robot::JedzProsto(double dlugosc)
         sciezkowy.RysujSciezke(_PolozenieObiektu, NazwaSciezki);
         wsklacze->Rysuj();
         usleep(40000);
+        for(std::list < std::shared_ptr <ObiektGraficzny> > :: iterator it = lista.begin(); it != lista.end(); ++it)
+        {
+            if((*it)->Kolizja(*this))
+            {
+                std::cout << "git w chuj";
+                return 0;
+            }
+        }
     }
     return 0;
 }
@@ -182,23 +197,33 @@ void Robot::Skaluj(double w)
 
 Robot::Robot(PzG::LaczeDoGNUPlota * lacznik)
 {
-    this->wsklacze = lacznik;
+    wsklacze = lacznik;
 
-    ++Robot::Indeks;
+    Promien = 30;
 
-    Nazwa += "Robot" + std::to_string(Robot::Indeks) + ".dat";
+    ++Indeks;
 
-    NazwaSciezki += "Sciezka" + std::to_string(Robot::Indeks) + ".dat";
+    Nazwa += "Robot" + std::to_string(Indeks) + ".dat";
+
+    NazwaSciezki += "Sciezka" + std::to_string(Indeks) + ".dat";
 
     wsklacze->DodajNazwePliku(Nazwa.c_str(), PzG::RR_Ciagly, 3);
-    wsklacze->ZmienTrybRys(PzG::TR_2D);
-
     wsklacze->DodajNazwePliku(NazwaSciezki.c_str(), PzG::RR_Ciagly,2);
-    wsklacze->ZmienTrybRys(PzG::TR_2D);
 }
 
 Wektor2D Robot::ZwrocPolozenie()
 {
-
     return _PolozenieObiektu;
+}
+
+bool Robot::Kolizja(ObiektGraficzny R)
+{
+    double a = abs(_PolozenieObiektu[0] - R._PolozenieObiektu[0]);
+    double b = abs(_PolozenieObiektu[1] - R._PolozenieObiektu[1]);
+    double dist = sqrt(pow(a, 2) + pow(b, 2));
+
+    if(dist == 0) { return false; }
+    if(Promien + R.Promien >= dist) { return true; }
+
+    return false;
 }

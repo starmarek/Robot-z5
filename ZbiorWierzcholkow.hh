@@ -27,6 +27,7 @@ public:
      * \brief Metoda dodająca nowy wierzchołek do kontenera.
      */
     void DodajWierzcholek(double a, double c);
+    Wektor2D ZwrocWierzcholek();
 };
 
 #endif
