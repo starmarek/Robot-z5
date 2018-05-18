@@ -1,6 +1,7 @@
 #ifndef OBIEKTGRAFICZNY_HH
 #define OBIEKTGRAFICZNY_HH
 
+
 /*!
  * \file
  * \brief Definicja klasy ObiektGraficzny
@@ -8,10 +9,9 @@
  * Plik zawiera definicję klasy ObiektGraficzny.
  */
 
+
 #include "ZbiorWierzcholkow.hh"
-#include "lacze_do_gnuplota.hh"
-#include <memory>
-#include <list>
+
 
 /*!
  * \brief Modeluje obiekt, który ma swoją reprezentację graficzną
@@ -22,9 +22,12 @@
  * ograniczona. Jedynym ograniczeniem jest dostępność pamięci
  * komputera.
  */
-
 class ObiektGraficzny
 {
+
+static int ObAkt;
+
+static int ObOgol;
 
 protected:
 
@@ -34,21 +37,21 @@ protected:
      *  Zawiera współrzędne punktu względem, którego podane są
      *  współrzędne punktów obrysu obiektu.
      */
-
+    Wektor2D   _PolozenieObiektu;
 
     /*!
      * \brief Tablica wierzchołków
      *
      * Zawiera współrzędne wierzchołków obiektów graficznych.
      */
-
+    ZbiorWierzcholkow _TabWierz;
 
     /*!
      * \brief Przechowuje nazwe do zapisu do pliku.
      *
      * Przechowuje nazwe do zapisu danego robota lub przeszkody.
      */
-
+    std::string Nazwa = "figury/";
 
     /*!
      * \brief Przechowuje nazwe do zapisu do pliku.
@@ -57,13 +60,10 @@ protected:
      */
     std::string NazwaSciezki = "figury/";
 
-
+    double Promien;
 
 public:
-std::string Nazwa = "figury/";
-Wektor2D   _PolozenieObiektu;
-ZbiorWierzcholkow _TabWierz;
-double Promien;
+
     /*!
      * \brief Metoda zmieniająca aktualne położenie obiektu
      */
@@ -79,7 +79,23 @@ double Promien;
      */
     bool ZapiszDoStrumienia(std::ostream& StrmWy) const;
 
-    virtual bool Kolizja(ObiektGraficzny R) { std:: cout << "To nie tak, bo bazowa!"; return 0; }
+    virtual bool Kolizja(Wektor2D wek, double r) { std:: cout << "To nie tak, bo bazowa!"; return 0; }
+
+    ObiektGraficzny();
+
+    ~ObiektGraficzny();
+
+    ObiektGraficzny(const ObiektGraficzny &W);
+
+    static void ZwrocOb()
+    {
+        std::cout << "Laczna ilosc stworzonych obiektow klasy ObiektGraficzny: " << ObOgol << std::endl;
+        std::cout << "Ilosc nieusunietych obiektow klasy ObiektGraficzny: " << ObAkt << std::endl << std::endl;
+    }
+
+    virtual void DodajPrzeszkode1() { ; }
+    virtual void DodajPrzeszkode2() { ; }
+    virtual void DodajPrzeszkode3() { ; }
 };
 
 #endif

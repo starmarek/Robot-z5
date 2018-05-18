@@ -9,6 +9,10 @@
 
 int main()
 {
-    Scena S;
-    S.Run();
+    {
+        Scena S;
+        S.Run();
+    }
+    ObiektGraficzny::ZwrocOb();
+    Wektor2D::ZwrocObi();
 }

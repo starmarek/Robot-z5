@@ -18,6 +18,7 @@ void Scena::WyswietlMenu()
     std::cout << "s -> Zmiana wielkosci robota" << std::endl;
     std::cout << "o -> Obrot o kat" << std::endl;
     std::cout << "w -> Ponowne wyswietlenie menu" << std::endl;
+    std::cout << "g -> Selekcja robota" << std:: endl;
     std::cout << "z -> Zmiana szybkosci robota" << std::endl << std::endl;
     std::cout << "k -> Zakonczenie dzialania programu" << std::endl;
 }
@@ -31,6 +32,7 @@ void Scena::DodajRoboty()
     LObiektow.push_back(ro);
 
     ++Rit;
+    ++Oit;
 
     (*Rit)->InicjalizujKsztalt();
     (*Rit)->DodajRobota();
@@ -42,6 +44,7 @@ void Scena::DodajRoboty()
     LObiektow.push_back(ro1);
 
     ++Rit;
+    ++Oit;
 
     (*Rit)->InicjalizujKsztalt();
     (*Rit)->DodajRobota();
@@ -53,6 +56,7 @@ void Scena::DodajRoboty()
     LObiektow.push_back(ro2);
 
     ++Rit;
+    ++Oit;
 
     (*Rit)->InicjalizujKsztalt();
     (*Rit)->DodajRobota();
@@ -61,35 +65,29 @@ void Scena::DodajRoboty()
 
 void Scena::DodajPrzeszkody()
 {
-    std::shared_ptr <Przeszkoda> p(new Przeszkoda(&lacze));
-    std::shared_ptr <ObiektGraficzny> po(p);
+    std::shared_ptr <ObiektGraficzny> p(new Przeszkoda(&lacze));
 
-    LPrzeszkod.push_back(p);
-    LObiektow.push_back(po);
+    LObiektow.push_back(p);
 
-    ++Pit;
+    ++Oit;
 
-    (*Pit)->DodajPrzeszkode1();
+    (*Oit)->DodajPrzeszkode1();
 
-    std::shared_ptr <Przeszkoda> p1(new Przeszkoda(&lacze));
-    std::shared_ptr <ObiektGraficzny> po1(p1);
+    std::shared_ptr <ObiektGraficzny> p1(new Przeszkoda(&lacze));
 
-    LPrzeszkod.push_back(p1);
-    LObiektow.push_back(po1);
+    LObiektow.push_back(p1);
 
-    ++Pit;
+    ++Oit;
 
-    (*Pit)->DodajPrzeszkode2();
+    (*Oit)->DodajPrzeszkode2();
 
-    std::shared_ptr <Przeszkoda> p2(new Przeszkoda(&lacze));
-    std::shared_ptr <ObiektGraficzny> po2(p2);
+    std::shared_ptr <ObiektGraficzny> p2(new Przeszkoda(&lacze));
 
-    LPrzeszkod.push_back(p2);
-    LObiektow.push_back(po2);
+    LObiektow.push_back(p2);
 
-    ++Pit;
+    ++Oit;
 
-    (*Pit)->DodajPrzeszkode3();
+    (*Oit)->DodajPrzeszkode3();
 }
 
 void Scena::JakiRobot()
@@ -140,7 +138,9 @@ void Scena::Menu()
     do
     {
         JakiRobot();
+        std::cout << "Twój wybór> ";
         std::cin >> znak;
+        std::cout << "\n";
 
         switch(znak)
         {
@@ -181,7 +181,7 @@ void Scena::Menu()
             if(znak == 'k')
             {
                 std::cout << "Koniec dzialania programu, dziekuje za uzytkowanie! \n";
-                exit(0);
+                return;
             }
             else
             {

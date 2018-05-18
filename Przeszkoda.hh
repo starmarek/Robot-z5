@@ -24,6 +24,7 @@ class Przeszkoda : public ObiektGraficzny
      */
     PzG::LaczeDoGNUPlota * wsklacze;
 
+
     /*!
      * \brief Zmienna indeksująca przeszkody.
      *
@@ -56,8 +57,7 @@ public:
      */
      Przeszkoda(PzG::LaczeDoGNUPlota * lacznik);
 
-     bool Kolizja(ObiektGraficzny R);
+     bool Kolizja(Wektor2D wek, double r);
 };
-
 
 #endif

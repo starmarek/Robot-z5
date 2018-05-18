@@ -53,6 +53,12 @@ public:
         std::cout << "Ilosc istniejacych obiektow klasy Wektor2D: " << WektoryAktualne << std::endl << std::endl;
     }
 
+    static void ZwrocObi()
+    {
+        std::cout << "Laczna ilosc stworzonych obiektow klasy Wektor2D: " << WektoryOgolne << std::endl;
+        std::cout << "Ilosc nieusunietych obiektow klasy Wektor2D: " << WektoryAktualne << std::endl << std::endl;
+    }
+
     /*!
      * \brief Inicjaliuje obiekt wartościami 0, oraz dokumentuje stowrzenie obiektu typu Wektor2D.
      */

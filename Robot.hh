@@ -13,12 +13,7 @@
 #include <math.h>
 #include <unistd.h>
 #include <memory>
-#include <list>
-#include "ObiektGraficzny.hh"
-#include "lacze_do_gnuplota.hh"
 #include "Sciezka.hh"
-
-
 
 
 /*!
@@ -62,7 +57,6 @@ class Robot : public ObiektGraficzny
      * neutralna.
      */
     double szybkosc = 1;
-
 
 
     double Alpha;
@@ -117,7 +111,7 @@ public:
 
     Wektor2D ZwrocPolozenie();
 
-    bool Kolizja(ObiektGraficzny R);
+    bool Kolizja(Wektor2D wek, double r);
 };
 
 #endif

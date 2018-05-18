@@ -2,54 +2,24 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="Wektor2D.hh" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Robot.hh" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="287" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Przeszkoda.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2134" topLine="65" />
-		</Cursor>
-	</File>
-	<File name="Sciezka.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="772" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="ObiektGraficzny.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="220" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Scena.hh" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="993" topLine="15" />
+			<Cursor1 position="210" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="main.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="159" topLine="0" />
+			<Cursor1 position="262" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Scena.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Przeszkoda.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4381" topLine="115" />
+			<Cursor1 position="512" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Robot.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Sciezka.hh" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="6042" topLine="128" />
-		</Cursor>
-	</File>
-	<File name="ZbiorWierzcholkow.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="665" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="SWektor.hh" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1142" topLine="96" />
+			<Cursor1 position="137" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="lacze_do_gnuplota.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -57,29 +27,64 @@
 			<Cursor1 position="1429" topLine="39" />
 		</Cursor>
 	</File>
-	<File name="Robot.hh" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Scena.hh" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2433" topLine="79" />
+			<Cursor1 position="895" topLine="6" />
 		</Cursor>
 	</File>
-	<File name="Przeszkoda.hh" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Sciezka.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="849" topLine="19" />
+			<Cursor1 position="772" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="ObiektGraficzny.hh" open="1" top="1" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="ZbiorWierzcholkow.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1321" topLine="0" />
+			<Cursor1 position="665" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Wektor2D.hh" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="287" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Przeszkoda.hh" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="666" topLine="19" />
+		</Cursor>
+	</File>
+	<File name="lacze_do_gnuplota.hh" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="58" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="ObiektGraficzny.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1810" topLine="51" />
+		</Cursor>
+	</File>
+	<File name="Robot.cpp" open="1" top="1" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4637" topLine="110" />
+		</Cursor>
+	</File>
+	<File name="Scena.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1728" topLine="12" />
 		</Cursor>
 	</File>
 	<File name="ZbiorWierzcholkow.hh" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="712" topLine="0" />
+			<Cursor1 position="251" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Sciezka.hh" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="ObiektGraficzny.hh" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="327" topLine="0" />
+			<Cursor1 position="2423" topLine="57" />
+		</Cursor>
+	</File>
+	<File name="SWektor.hh" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4802" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

@@ -10,8 +10,7 @@
 
 #include "Robot.hh"
 #include "Przeszkoda.hh"
-#include <memory>
-#include <list>
+
 
 /*!
  * \brief Klasa modelująca pojęcie Sceny.
@@ -30,12 +29,10 @@ class Scena
     PzG::LaczeDoGNUPlota lacze;
 
     std::list < std::shared_ptr <ObiektGraficzny> > LObiektow;
+    std::list < std::shared_ptr <ObiektGraficzny> > :: iterator Oit = LObiektow.begin();
 
     std::list < std::shared_ptr <Robot> > LRobotow;
     std::list < std::shared_ptr <Robot> > :: iterator Rit = LRobotow.begin();
-
-    std::list < std::shared_ptr <Przeszkoda> > LPrzeszkod;
-    std::list < std::shared_ptr <Przeszkoda> > :: iterator Pit = LPrzeszkod.begin();
 
 public:
 

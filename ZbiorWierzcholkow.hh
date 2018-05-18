@@ -10,7 +10,7 @@
  */
 
 #include "Wektor2D.hh"
-#include <vector>
+#include "lacze_do_gnuplota.hh"
 
 /*!
  * \brief Modeluje kontener do którego są wrzucane wierzchołki obiektów.

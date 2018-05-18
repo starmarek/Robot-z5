@@ -6,10 +6,13 @@
  * wraz z ich opisem.
  */
 
+
 #include <fstream>
 #include "ObiektGraficzny.hh"
 
-using namespace std;
+
+int ObiektGraficzny::ObAkt;
+int ObiektGraficzny::ObOgol;
 
 
 /*!
@@ -27,10 +30,11 @@ bool ObiektGraficzny::ZapiszDoStrumienia(std::ostream& StrmWy) const
     for (const Wektor2D&  W_lok : _TabWierz)
     {
         W_glob = W_lok + _PolozenieObiektu;
-        StrmWy << W_glob << endl;
+        StrmWy << W_glob << std::endl;
     }
     return !StrmWy.fail();
 }
+
 
 /*!
  * Do aktualnego wektora położenia dodaje wektor, który zmienia jego wartość
@@ -44,6 +48,7 @@ void ObiektGraficzny::PoruszOWektor(Wektor2D c)
     _PolozenieObiektu[1] += c[1];
 }
 
+
 /*!
  * Zapisuje do pliku współrzędne globalne wierzchołków
  * obrysu obiektu.
@@ -54,15 +59,37 @@ void ObiektGraficzny::PoruszOWektor(Wektor2D c)
  */
 bool ObiektGraficzny::ZapiszDoPliku(const char* sNazwaPliku) const
 {
-    ofstream   StrmWy(sNazwaPliku);
+    std::ofstream   StrmWy(sNazwaPliku);
 
     if (!StrmWy.is_open())
     {
-        cerr << endl
+        std::cerr << std::endl
              << "Blad: Otwarcie do zapisu pliku '" << sNazwaPliku
-             << "' nie powiodlo sie." << endl
-             << endl;
+             << "' nie powiodlo sie." << std::endl
+             << std::endl;
         return false;
     }
     return ZapiszDoStrumienia(StrmWy);
+}
+
+
+ObiektGraficzny::ObiektGraficzny(const ObiektGraficzny &W)
+{
+    Promien = W.Promien;
+    _PolozenieObiektu = W._PolozenieObiektu;
+    ++ObAkt;
+    ++ObOgol;
+}
+
+
+ObiektGraficzny::ObiektGraficzny()
+{
+    ++ObAkt;
+    ++ObOgol;
+}
+
+
+ObiektGraficzny::~ObiektGraficzny()
+{
+    --ObAkt;
 }

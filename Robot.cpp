@@ -6,9 +6,12 @@
  * wraz z ich opisem.
  */
 
+
 #include "Robot.hh"
 
+
 int Robot::Indeks;
+
 
 /*!
  * Pobiera od użytkownika nową wartość szybkości i nadpisuje aktualną.
@@ -20,6 +23,7 @@ void Robot::ZmienSzybkosc()
     std::cin >> g;
     szybkosc = g;
 }
+
 
 /*!
  * Obraca każdy wierzchołek robota w oparciu o wzór:
@@ -51,6 +55,7 @@ void Robot::Obrot(double a)
 
     }
 }
+
 
 /*!
  * Wykonuje animację obrotu widoczną na scenie.
@@ -85,6 +90,7 @@ int Robot::obroc(double b)
     return 0;
 }
 
+
 /*!
  * Tworzy wierzchołki robota o podanych współrzędnych.
  */
@@ -100,6 +106,7 @@ void Robot::InicjalizujKsztalt()
 
     ZapiszDoPliku(Nazwa.c_str());
 }
+
 
 /*!
  * Metoda zmieniająca położenie robota względem zadanego przez użytkownika punktu.
@@ -149,9 +156,9 @@ int Robot::JedzProsto(double dlugosc, std::list < std::shared_ptr <ObiektGraficz
            usleep(40000);
            for(std::list < std::shared_ptr <ObiektGraficzny> > :: iterator it = lista.begin(); it != lista.end(); ++it)
             {
-                if((*it)->Kolizja(*this))
+                if((*it)->Kolizja(this->_PolozenieObiektu, this->Promien))
                 {
-                    std::cout << "git w chuj";
+                    std::cout << "\n!!! Ruch nie moze zostac kontynuowany \n!!! ze wzgledu na wystapienie kolizji\n";
                     return 0;
                 }
             }
@@ -164,9 +171,9 @@ int Robot::JedzProsto(double dlugosc, std::list < std::shared_ptr <ObiektGraficz
         usleep(40000);
         for(std::list < std::shared_ptr <ObiektGraficzny> > :: iterator it = lista.begin(); it != lista.end(); ++it)
         {
-            if((*it)->Kolizja(*this))
+            if((*it)->Kolizja(this->_PolozenieObiektu, this->Promien))
             {
-                std::cout << "git w chuj";
+                std::cout << "\n!!! Ruch nie moze zostac kontynuowany \n!!! ze wzgledu na wystapienie kolizji\n";
                 return 0;
             }
         }
@@ -181,7 +188,6 @@ int Robot::JedzProsto(double dlugosc, std::list < std::shared_ptr <ObiektGraficz
  */
 void Robot::Skaluj(double w)
 {
-
     for(unsigned int i = 0; i < _TabWierz.size(); ++i)
     {
         _TabWierz[i][0] /= skala;
@@ -189,7 +195,10 @@ void Robot::Skaluj(double w)
         _TabWierz[i][0] *= w;
         _TabWierz[i][1] *= w;
     }
+
+    Promien /= skala;
     skala = w;
+    Promien *= w;
     ZapiszDoPliku(Nazwa.c_str());
     wsklacze->Rysuj();
 }
@@ -211,19 +220,21 @@ Robot::Robot(PzG::LaczeDoGNUPlota * lacznik)
     wsklacze->DodajNazwePliku(NazwaSciezki.c_str(), PzG::RR_Ciagly,2);
 }
 
+
 Wektor2D Robot::ZwrocPolozenie()
 {
     return _PolozenieObiektu;
 }
 
-bool Robot::Kolizja(ObiektGraficzny R)
+
+bool Robot::Kolizja(Wektor2D wek, double r)
 {
-    double a = abs(_PolozenieObiektu[0] - R._PolozenieObiektu[0]);
-    double b = abs(_PolozenieObiektu[1] - R._PolozenieObiektu[1]);
+    double a = abs(_PolozenieObiektu[0] - wek[0]);
+    double b = abs(_PolozenieObiektu[1] - wek[1]);
     double dist = sqrt(pow(a, 2) + pow(b, 2));
 
     if(dist == 0) { return false; }
-    if(Promien + R.Promien >= dist) { return true; }
+    if(Promien + r >= dist) { return true; }
 
     return false;
 }

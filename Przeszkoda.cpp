@@ -15,26 +15,22 @@
 int Przeszkoda::Indeks;
 
 
-bool Przeszkoda::Kolizja(ObiektGraficzny R)
+bool Przeszkoda::Kolizja(Wektor2D wek, double r)
 {
     double x, y;
     double szerokosc = _TabWierz[1][0] - _TabWierz[0][0];
     double wysokosc = _TabWierz[2][1] - _TabWierz[1][1];
-    x = abs(R._PolozenieObiektu[0] - _PolozenieObiektu[0]);
-    y = abs(R._PolozenieObiektu[1] - _PolozenieObiektu[1]);
+    x = abs(wek[0] - _PolozenieObiektu[0]);
+    y = abs(wek[1] - _PolozenieObiektu[1]);
     double cDist = pow((x - szerokosc/2), 2) + pow((y - wysokosc/2), 2);
 
-
-
-    if (x > (szerokosc/2 + R.Promien)) { return false; }
-    if (y > (wysokosc/2 + R.Promien)) { return false; }
+    if (x > (szerokosc/2 + r)) { return false; }
+    if (y > (wysokosc/2 + r)) { return false; }
 
     if (x <= (szerokosc/2)) { return true; }
     if (y <= (wysokosc/2)) { return true; }
 
-    //std::cout << "Przeszkoda";
-
-    return (cDist <= pow((R.Promien), 2));
+    return (cDist <= pow((r), 2));
 }
 
 
@@ -43,7 +39,6 @@ bool Przeszkoda::Kolizja(ObiektGraficzny R)
  */
 Przeszkoda::Przeszkoda(PzG::LaczeDoGNUPlota * lacznik)
 {
-
  Indeks++;
 
  wsklacze = lacznik;
@@ -52,7 +47,6 @@ Przeszkoda::Przeszkoda(PzG::LaczeDoGNUPlota * lacznik)
 
  wsklacze->DodajNazwePliku(Nazwa.c_str(), PzG::RR_Ciagly, 4);
 }
-
 
 
 /*!
@@ -90,6 +84,7 @@ void Przeszkoda::DodajPrzeszkode2()
     _PolozenieObiektu[1] = -200;
 }
 
+
 /*!
  * Wrzuca wierzchołki do tablicy i zapisuje ją do pliku pod nazwą danej przeszkody.
  */
@@ -106,4 +101,3 @@ void Przeszkoda::DodajPrzeszkode3()
     _PolozenieObiektu[0] = -200;
     _PolozenieObiektu[1] =  150;
 }
-
