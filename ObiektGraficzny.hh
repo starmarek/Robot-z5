@@ -85,8 +85,6 @@ public:
 
     ~ObiektGraficzny();
 
-    ObiektGraficzny(const ObiektGraficzny &W);
-
     static void ZwrocOb()
     {
         std::cout << "Laczna ilosc stworzonych obiektow klasy ObiektGraficzny: " << ObOgol << std::endl;

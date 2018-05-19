@@ -73,15 +73,6 @@ bool ObiektGraficzny::ZapiszDoPliku(const char* sNazwaPliku) const
 }
 
 
-ObiektGraficzny::ObiektGraficzny(const ObiektGraficzny &W)
-{
-    Promien = W.Promien;
-    _PolozenieObiektu = W._PolozenieObiektu;
-    ++ObAkt;
-    ++ObOgol;
-}
-
-
 ObiektGraficzny::ObiektGraficzny()
 {
     ++ObAkt;

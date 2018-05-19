@@ -97,7 +97,7 @@ public:
      * \brief Metoda przemieszczająca robota na podaną odległość,
      *  posiadająca już wbudowaną animację.
      */
-    int JedzProsto(double dlugosc, std::list < std::shared_ptr <ObiektGraficzny> > lista);
+    void JedzProsto(double dlugosc, std::list < std::shared_ptr <ObiektGraficzny> > lista);
 
     /*!
      * \brief Metoda skalująca robota.
@@ -107,11 +107,15 @@ public:
     /*!
      * \brief Metoda wyświetlająca robota w zadanym przez użytkownika położeniu.
      */
-    void DodajRobota();
+    void DodajRobota1();
+    void DodajRobota2();
+    void DodajRobota3();
 
     Wektor2D ZwrocPolozenie();
 
     bool Kolizja(Wektor2D wek, double r);
+
+    bool DetekcjaKol(std::list < std::shared_ptr <ObiektGraficzny> > lista);
 };
 
 #endif

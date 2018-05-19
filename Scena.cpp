@@ -35,7 +35,7 @@ void Scena::DodajRoboty()
     ++Oit;
 
     (*Rit)->InicjalizujKsztalt();
-    (*Rit)->DodajRobota();
+    (*Rit)->DodajRobota1();
 
     std::shared_ptr <Robot> r1(new Robot(&lacze));
     std::shared_ptr <ObiektGraficzny> ro1(r1);
@@ -47,7 +47,7 @@ void Scena::DodajRoboty()
     ++Oit;
 
     (*Rit)->InicjalizujKsztalt();
-    (*Rit)->DodajRobota();
+    (*Rit)->DodajRobota2();
 
     std::shared_ptr <Robot> r2(new Robot(&lacze));
     std::shared_ptr <ObiektGraficzny> ro2(r2);
@@ -59,7 +59,7 @@ void Scena::DodajRoboty()
     ++Oit;
 
     (*Rit)->InicjalizujKsztalt();
-    (*Rit)->DodajRobota();
+    (*Rit)->DodajRobota3();
 
 }
 
@@ -118,7 +118,6 @@ void Scena::WyborRobota()
     for(unsigned int i = 1; i < w; ++i)
     {
         ++Rit;
-        std::cout << "Jestem" << std::endl;
     }
 }
 

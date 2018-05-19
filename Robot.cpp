@@ -113,13 +113,44 @@ void Robot::InicjalizujKsztalt()
  * Dodatkowo inicjalizuje pierwszy punkt ścieżki oraz rysuje robota w programie
  * \e gnuplot.
  */
-void Robot::DodajRobota()
+void Robot::DodajRobota1()
 {
-    std::cout << "Podaj wspolrzedne srodka robota aby go stworzyc: " << std::endl;
-    std::cin >> _PolozenieObiektu[0] >> _PolozenieObiektu[1];
+    _PolozenieObiektu[0] = 150;
+    _PolozenieObiektu[1] = 150;
     ZapiszDoPliku(Nazwa.c_str());
     sciezkowy.DodajPierwszyPunkt(_PolozenieObiektu[0], _PolozenieObiektu[1], NazwaSciezki);
 }
+
+void Robot::DodajRobota2()
+{
+    _PolozenieObiektu[0] = -250;
+    _PolozenieObiektu[1] = -250;
+    ZapiszDoPliku(Nazwa.c_str());
+    sciezkowy.DodajPierwszyPunkt(_PolozenieObiektu[0], _PolozenieObiektu[1], NazwaSciezki);
+}
+
+void Robot::DodajRobota3()
+{
+    _PolozenieObiektu[0] = 0;
+    _PolozenieObiektu[1] = 0;
+    ZapiszDoPliku(Nazwa.c_str());
+    sciezkowy.DodajPierwszyPunkt(_PolozenieObiektu[0], _PolozenieObiektu[1], NazwaSciezki);
+}
+
+
+bool Robot::DetekcjaKol(std::list < std::shared_ptr <ObiektGraficzny> > lista)
+{
+    for(std::list < std::shared_ptr <ObiektGraficzny> > :: iterator it = lista.begin(); it != lista.end(); ++it)
+    {
+        if((*it)->Kolizja(this->_PolozenieObiektu, this->Promien))
+        {
+            std::cout << "\n!!! Ruch nie moze zostac kontynuowany \n!!! ze wzgledu na wystapienie kolizji\n";
+            return true;
+        }
+    }
+    return false;
+}
+
 
 /*!
  * W oparciu o odlegść na jaką ma się przemieścić robot, obliczą wektor przesunięcią
@@ -137,7 +168,7 @@ void Robot::DodajRobota()
  * \param dlugosc - ilosc jednostek na skali sceny, o które ma się przesunąć robot względem swojego
  * aktualnego położenia.
  */
-int Robot::JedzProsto(double dlugosc, std::list < std::shared_ptr <ObiektGraficzny> > lista)
+void Robot::JedzProsto(double dlugosc, std::list < std::shared_ptr <ObiektGraficzny> > lista)
 {
     Wektor2D wektorPrzemieszczenia;
     double tmp = dlugosc / szybkosc;
@@ -150,35 +181,21 @@ int Robot::JedzProsto(double dlugosc, std::list < std::shared_ptr <ObiektGraficz
         if(tmp - i < 1)
         {
            PoruszOWektor(wektorPrzemieszczenia * ((tmp - i) * szybkosc));
+           if(DetekcjaKol(lista)) return;
            ZapiszDoPliku(Nazwa.c_str());
            sciezkowy.RysujSciezke(_PolozenieObiektu, NazwaSciezki);
            wsklacze->Rysuj();
            usleep(40000);
-           for(std::list < std::shared_ptr <ObiektGraficzny> > :: iterator it = lista.begin(); it != lista.end(); ++it)
-            {
-                if((*it)->Kolizja(this->_PolozenieObiektu, this->Promien))
-                {
-                    std::cout << "\n!!! Ruch nie moze zostac kontynuowany \n!!! ze wzgledu na wystapienie kolizji\n";
-                    return 0;
-                }
-            }
-           return 0;
+           return;
         }
         PoruszOWektor(wektorPrzemieszczenia * szybkosc);
+        if(DetekcjaKol(lista)) return;
         ZapiszDoPliku(Nazwa.c_str());
         sciezkowy.RysujSciezke(_PolozenieObiektu, NazwaSciezki);
         wsklacze->Rysuj();
         usleep(40000);
-        for(std::list < std::shared_ptr <ObiektGraficzny> > :: iterator it = lista.begin(); it != lista.end(); ++it)
-        {
-            if((*it)->Kolizja(this->_PolozenieObiektu, this->Promien))
-            {
-                std::cout << "\n!!! Ruch nie moze zostac kontynuowany \n!!! ze wzgledu na wystapienie kolizji\n";
-                return 0;
-            }
-        }
     }
-    return 0;
+    return;
 }
 
 /*!

@@ -153,10 +153,8 @@ SWektor<STyp, SWymiar>::SWektor()
 template <typename STyp, int SWymiar>
 SWektor<STyp, SWymiar>::SWektor(const SWektor<STyp, SWymiar> &W)
 {
-    for(unsigned int i = 0; i<SWymiar;++i)
-    {
-        _Wsp[i] = W[i];
-    }
+    for(unsigned int i = 0; i<SWymiar;++i) _Wsp[i] = W[i];
+
     ++WektoryAktualne;
     ++WektoryOgolne;
 }

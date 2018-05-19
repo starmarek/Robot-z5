@@ -17,18 +17,9 @@
  * \param b - Y'owa współrzędna wierzchołka
  */
 void ZbiorWierzcholkow::DodajWierzcholek(double a, double c)
-    {
-        Wektor2D nowy;
-        nowy[0] = a;
-        nowy[1] = c;
-        push_back(nowy);
-    }
-
-
-Wektor2D ZbiorWierzcholkow::ZwrocWierzcholek()
 {
-    return (*end());
+    Wektor2D nowy;
+    nowy[0] = a;
+    nowy[1] = c;
+    push_back(nowy);
 }
-
-
-
