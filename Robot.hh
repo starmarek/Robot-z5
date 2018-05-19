@@ -1,7 +1,6 @@
 #ifndef ROBOT_HH
 #define ROBOT_HH
 
-
 /*!
  * \file
  * \brief Definicja klasy Robot.
@@ -9,12 +8,10 @@
  * Plik zawiera definicję klasy Robot.
  */
 
-
 #include <math.h>
 #include <unistd.h>
 #include <memory>
 #include "Sciezka.hh"
-
 
 /*!
  * \brief Modeluje Robota którym będziemy poruszać po scenie.
@@ -58,9 +55,12 @@ class Robot : public ObiektGraficzny
      */
     double szybkosc = 1;
 
-
+    /*!
+     * \brief Zmienna przechowująca kąt obrotu.
+     *
+     * Przechowuje informację o jaki kąt jest aktualnie obrócony robot.
+     */
     double Alpha;
-
 
     /*!
      * \brief Zmienna indeksująca roboty.
@@ -69,8 +69,19 @@ class Robot : public ObiektGraficzny
      */
     static int Indeks;
 
+    /*!
+     * \brief Zmienna przechowująca aktualną długość promienia robota.
+     *
+     * Podczas wykrywania kolizji przyjmuje się że na robocie da się opisać okrąg, którego promień
+     * jest przechowywany właśnie w tej zmiennej.
+     */
+    double Promien;
+
 public:
 
+    /*!
+     * \brief Wykonuje podstawowe czynności przy stworzeniu obiektu typu Robot.
+     */
     Robot(PzG::LaczeDoGNUPlota * lacznik);
 
     /*!
@@ -86,7 +97,7 @@ public:
     /*!
      * \brief Metoda odpowiadająca za realny obrót, to jest, animację.
      */
-    int obroc(double b);
+    void obroc(double b);
 
     /*!
      * \brief Metoda inicjalizująca robota na scenie.
@@ -95,7 +106,7 @@ public:
 
     /*!
      * \brief Metoda przemieszczająca robota na podaną odległość,
-     *  posiadająca już wbudowaną animację.
+     *  posiadająca już wbudowaną animację, i detekcję kolizji.
      */
     void JedzProsto(double dlugosc, std::list < std::shared_ptr <ObiektGraficzny> > lista);
 
@@ -105,16 +116,33 @@ public:
     void Skaluj(double w);
 
     /*!
-     * \brief Metoda wyświetlająca robota w zadanym przez użytkownika położeniu.
+     * \brief Metoda dodająca robota w zadanym położeniu.
      */
     void DodajRobota1();
+
+    /*!
+     * \brief Metoda dodająca robota w zadanym położeniu.
+     */
     void DodajRobota2();
+
+    /*!
+     * \brief Metoda dodająca robota w zadanym położeniu.
+     */
     void DodajRobota3();
 
+    /*!
+     * \brief Zwraca aktualny wektor położenia robota.
+     */
     Wektor2D ZwrocPolozenie();
 
+    /*!
+     * \brief Wykrywa kolizję robota z robotem.
+     */
     bool Kolizja(Wektor2D wek, double r);
 
+    /*!
+     * \brief Metoda wykrywająca wszystkie kolizję w podanej liście Obiektów graficznych.
+     */
     bool DetekcjaKol(std::list < std::shared_ptr <ObiektGraficzny> > lista);
 };
 

@@ -6,12 +6,12 @@
  * wraz z ich opisem.
  */
 
-
 #include "Robot.hh"
 
-
+/*!
+ * Inicjalizacja zmiennej statycznej.
+ */
 int Robot::Indeks;
-
 
 /*!
  * Pobiera od użytkownika nową wartość szybkości i nadpisuje aktualną.
@@ -23,7 +23,6 @@ void Robot::ZmienSzybkosc()
     std::cin >> g;
     szybkosc = g;
 }
-
 
 /*!
  * Obraca każdy wierzchołek robota w oparciu o wzór:
@@ -56,7 +55,6 @@ void Robot::Obrot(double a)
     }
 }
 
-
 /*!
  * Wykonuje animację obrotu widoczną na scenie.
  * Wykrzystuje funkcję \e usleep z nagłówka \e <unistd.h>,
@@ -67,7 +65,7 @@ void Robot::Obrot(double a)
  * \param b - kąt o który ma się obrócić robot podany w stopniach, potrzebny aby pętla
  * \e for wykonała odpowiednią ilość skoków.
  */
-int Robot::obroc(double b)
+void Robot::obroc(double b)
 {
     double tmp = b/szybkosc;
 
@@ -79,7 +77,7 @@ int Robot::obroc(double b)
             ZapiszDoPliku(Nazwa.c_str());
             wsklacze->Rysuj();
             usleep(40000);
-            return 0;
+            return;
         }
 
         Obrot(szybkosc);
@@ -87,12 +85,11 @@ int Robot::obroc(double b)
         wsklacze->Rysuj();
         usleep(40000);
     }
-    return 0;
+    return;
 }
 
-
 /*!
- * Tworzy wierzchołki robota o podanych współrzędnych.
+ * Tworzy wierzchołki robota w podanych współrzędnych.
  */
 void Robot::InicjalizujKsztalt()
 {
@@ -107,9 +104,8 @@ void Robot::InicjalizujKsztalt()
     ZapiszDoPliku(Nazwa.c_str());
 }
 
-
 /*!
- * Metoda zmieniająca położenie robota względem zadanego przez użytkownika punktu.
+ * Metoda zmieniająca położenie robota względem zadanego punktu.
  * Dodatkowo inicjalizuje pierwszy punkt ścieżki oraz rysuje robota w programie
  * \e gnuplot.
  */
@@ -121,6 +117,11 @@ void Robot::DodajRobota1()
     sciezkowy.DodajPierwszyPunkt(_PolozenieObiektu[0], _PolozenieObiektu[1], NazwaSciezki);
 }
 
+/*!
+ * Metoda zmieniająca położenie robota względem zadanego punktu.
+ * Dodatkowo inicjalizuje pierwszy punkt ścieżki oraz rysuje robota w programie
+ * \e gnuplot.
+ */
 void Robot::DodajRobota2()
 {
     _PolozenieObiektu[0] = -250;
@@ -129,6 +130,11 @@ void Robot::DodajRobota2()
     sciezkowy.DodajPierwszyPunkt(_PolozenieObiektu[0], _PolozenieObiektu[1], NazwaSciezki);
 }
 
+/*!
+ * Metoda zmieniająca położenie robota względem zadanego punktu.
+ * Dodatkowo inicjalizuje pierwszy punkt ścieżki oraz rysuje robota w programie
+ * \e gnuplot.
+ */
 void Robot::DodajRobota3()
 {
     _PolozenieObiektu[0] = 0;
@@ -137,7 +143,12 @@ void Robot::DodajRobota3()
     sciezkowy.DodajPierwszyPunkt(_PolozenieObiektu[0], _PolozenieObiektu[1], NazwaSciezki);
 }
 
-
+/*!
+ * Metoda przy pomocy iteratora sprawdza czy z żadnym z obiektów z listy obiektów graficznych,
+ * nie zeszła kolizja wywołując odpowiednią metodę co do obiektu (metody wirtualne).
+ *
+ * Jeżli zaszła, zwraca \e true, jeżeli nie, \e false.
+ */
 bool Robot::DetekcjaKol(std::list < std::shared_ptr <ObiektGraficzny> > lista)
 {
     for(std::list < std::shared_ptr <ObiektGraficzny> > :: iterator it = lista.begin(); it != lista.end(); ++it)
@@ -151,7 +162,6 @@ bool Robot::DetekcjaKol(std::list < std::shared_ptr <ObiektGraficzny> > lista)
     return false;
 }
 
-
 /*!
  * W oparciu o odlegść na jaką ma się przemieścić robot, obliczą wektor przesunięcią
  * ze wzoru:
@@ -163,10 +173,12 @@ bool Robot::DetekcjaKol(std::list < std::shared_ptr <ObiektGraficzny> > lista)
  * to kąt o jaki jest aktualnie obrócony robot. Jako, że chcemy uzyskać wersor
  * dzielimy prawą stronę równana przez \e odlegosc, zatem zostaje sam \e cos i \e sin.
  * Następnie w pętli \e for, metoda dokonuje przesunięcia robota dzięki funkcji \e PoruszOWektor,
- * wraz z animcją, przy uzyciu funkcji \e usleep.
+ * wraz z animcją, przy uzyciu funkcji \e usleep. Przy każdym skoku o \e wektorPrzemieszczenia,
+ * sprawdza czy zaszła kolizja robota z którymś z obiektów przy pomocy metody \e DetekcjaKol.
  *
  * \param dlugosc - ilosc jednostek na skali sceny, o które ma się przesunąć robot względem swojego
  * aktualnego położenia.
+ * \param lista - aktualna lista wszystkich obiektów graficznych.
  */
 void Robot::JedzProsto(double dlugosc, std::list < std::shared_ptr <ObiektGraficzny> > lista)
 {
@@ -201,7 +213,7 @@ void Robot::JedzProsto(double dlugosc, std::list < std::shared_ptr <ObiektGrafic
 /*!
  * Zmienia wielkość robota względem skali podanej przez użytkownika. Metoda zawsze
  * najpierw uwzględnia aktualną skalę aby skalować robota przyjmując wartość podstawową
- * równą jeden.
+ * równą jeden. Zmienia również długość promienia robota.
  */
 void Robot::Skaluj(double w)
 {
@@ -220,7 +232,10 @@ void Robot::Skaluj(double w)
     wsklacze->Rysuj();
 }
 
-
+/*!
+ * Konstruktor nadaje robotowi jego długość promienia, numer indeksu, oraz osobistą nazwę potrzebną przy zapisie do pliku.
+ * Inicjalizuje również ten plik.
+ */
 Robot::Robot(PzG::LaczeDoGNUPlota * lacznik)
 {
     wsklacze = lacznik;
@@ -237,13 +252,22 @@ Robot::Robot(PzG::LaczeDoGNUPlota * lacznik)
     wsklacze->DodajNazwePliku(NazwaSciezki.c_str(), PzG::RR_Ciagly,2);
 }
 
-
+/*!
+ * Metoda potrzebna przy wyświetlaniu aktualnie używanego robota w metodzie sceny.
+ */
 Wektor2D Robot::ZwrocPolozenie()
 {
     return _PolozenieObiektu;
 }
 
-
+/*!
+ * Detekcja kolizji przebiega na zasadzie porównania odległości między środkami robotów,
+ * do sumy promieni okręgów na nich opisanych. Zwraca \e true kiedy kolizja zaszła, oraz \e false
+ * kiedy nie zaszła.
+ *
+ * \param wek - polożenie aktualnie używanego robota.
+ * \param r - promień aktualnie używanego robota
+ */
 bool Robot::Kolizja(Wektor2D wek, double r)
 {
     double a = abs(_PolozenieObiektu[0] - wek[0]);

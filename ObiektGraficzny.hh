@@ -1,7 +1,6 @@
 #ifndef OBIEKTGRAFICZNY_HH
 #define OBIEKTGRAFICZNY_HH
 
-
 /*!
  * \file
  * \brief Definicja klasy ObiektGraficzny
@@ -9,9 +8,7 @@
  * Plik zawiera definicję klasy ObiektGraficzny.
  */
 
-
 #include "ZbiorWierzcholkow.hh"
-
 
 /*!
  * \brief Modeluje obiekt, który ma swoją reprezentację graficzną
@@ -25,8 +22,14 @@
 class ObiektGraficzny
 {
 
+/*!
+ * Zmienna zliczająca aktualnie istniejące obiketu typu ObiektGraficzny.
+ */
 static int ObAkt;
 
+/*!
+ * Zmienna zliczająca ogólnie stworzone obiekty typu ObiektGraficzny.
+ */
 static int ObOgol;
 
 protected:
@@ -60,8 +63,6 @@ protected:
      */
     std::string NazwaSciezki = "figury/";
 
-    double Promien;
-
 public:
 
     /*!
@@ -79,20 +80,44 @@ public:
      */
     bool ZapiszDoStrumienia(std::ostream& StrmWy) const;
 
+    /*!
+     * Metoda detekcji kolizji nie mająca żadnego zastosowania w klasie bazowej.
+     */
     virtual bool Kolizja(Wektor2D wek, double r) { std:: cout << "To nie tak, bo bazowa!"; return 0; }
 
+    /*!
+     * \brief Customowy konstruktor klasy ObiektGraficzny.
+     */
     ObiektGraficzny();
 
+    /*!
+     * \brief Customowy destruktor klasy ObiektGraficzny.
+     */
     ~ObiektGraficzny();
 
+    /*!
+     * Wyświetla aktualnie istniejącą i ogólnie stworzoną ilość obiektów graficznych. Metoda napisana
+     * z myślą aby przetestować na koniec działania programu czy nie powstały żadne wycieki pamięci.
+     */
     static void ZwrocOb()
     {
-        std::cout << "Laczna ilosc stworzonych obiektow klasy ObiektGraficzny: " << ObOgol << std::endl;
+        std::cout << "\n\nLaczna ilosc stworzonych obiektow klasy ObiektGraficzny: " << ObOgol << std::endl;
         std::cout << "Ilosc nieusunietych obiektow klasy ObiektGraficzny: " << ObAkt << std::endl << std::endl;
     }
 
+    /*!
+     * Metoda tworząca przeszkodę, nie mająca żadnego zastosowania w klasie bazowej.
+     */
     virtual void DodajPrzeszkode1() { ; }
+
+    /*!
+     * Metoda tworząca przeszkodę, nie mająca żadnego zastosowania w klasie bazowej.
+     */
     virtual void DodajPrzeszkode2() { ; }
+
+    /*!
+     * Metoda tworząca przeszkodę, nie mająca żadnego zastosowania w klasie bazowej.
+     */
     virtual void DodajPrzeszkode3() { ; }
 };
 

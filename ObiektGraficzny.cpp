@@ -6,14 +6,11 @@
  * wraz z ich opisem.
  */
 
-
 #include <fstream>
 #include "ObiektGraficzny.hh"
 
-
 int ObiektGraficzny::ObAkt;
 int ObiektGraficzny::ObOgol;
-
 
 /*!
  * Zapisuje do strumienia współrzędne globalne wierzchołków
@@ -35,7 +32,6 @@ bool ObiektGraficzny::ZapiszDoStrumienia(std::ostream& StrmWy) const
     return !StrmWy.fail();
 }
 
-
 /*!
  * Do aktualnego wektora położenia dodaje wektor, który zmienia jego wartość
  * a zatem zmienia położenie robota.
@@ -47,7 +43,6 @@ void ObiektGraficzny::PoruszOWektor(Wektor2D c)
     _PolozenieObiektu[0] += c[0];
     _PolozenieObiektu[1] += c[1];
 }
-
 
 /*!
  * Zapisuje do pliku współrzędne globalne wierzchołków
@@ -72,7 +67,10 @@ bool ObiektGraficzny::ZapiszDoPliku(const char* sNazwaPliku) const
     return ZapiszDoStrumienia(StrmWy);
 }
 
-
+/*!
+ * Dokumentuje stworzenie obiektu klasy ObiektGraficzny przez zwiększenie zmiennych statycznych
+ * które przechowują informację o ich ilości.
+ */
 ObiektGraficzny::ObiektGraficzny()
 {
     ++ObAkt;
@@ -80,6 +78,10 @@ ObiektGraficzny::ObiektGraficzny()
 }
 
 
+/*!
+ * Dokumentuje znieszczenie obiektu klasy ObiektGraficzny przez zmniejszenie zmiennej statycznej
+ * która przechowuje informację o ilości obiektów aktualnie istniejących.
+ */
 ObiektGraficzny::~ObiektGraficzny()
 {
     --ObAkt;

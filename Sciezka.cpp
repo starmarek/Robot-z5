@@ -14,8 +14,8 @@
  *
  * \param a - X'owa współrzędna wektora.
  * \param b - Y'owa współrzędna wektora.
+ * \param g - Nazwa pliku do którego należy zapisać punkt.
  */
-
 void Sciezka::DodajPierwszyPunkt(double a, double b, std::string g)
 {
     _TabWierz.DodajWierzcholek(a, b);
@@ -27,6 +27,7 @@ void Sciezka::DodajPierwszyPunkt(double a, double b, std::string g)
  *
  * \param pol - Współrzędne kolejnego punktu linii, podane na podstawie
  * aktualnego położenia robota.
+ * \param g - Nazwa pliku do którego należy zapisać punkt.
  */
 void Sciezka::RysujSciezke(Wektor2D pol, std::string g)
 {

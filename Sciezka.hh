@@ -1,7 +1,6 @@
 #ifndef SCIEZKA_HH
 #define SCIEZKA_HH
 
-
 /*!
  * \file
  * \brief Definicja klasy Sciezka.
@@ -9,9 +8,7 @@
  * Plik zawiera definicję klasy Sciezka.
  */
 
-
 #include "ObiektGraficzny.hh"
-
 
 /*!
  * \brief Modeluje linię ciągnącą się za robotem.

@@ -23,6 +23,11 @@ void Scena::WyswietlMenu()
     std::cout << "k -> Zakonczenie dzialania programu" << std::endl;
 }
 
+
+/*!
+ * Tworzy Roboty wraz ze wskaźnikami na nie, następnie wrzuca te wskaźniki do dwóch list
+ * oraz wyświetla roboty na scenie.
+ */
 void Scena::DodajRoboty()
 {
     std::shared_ptr <Robot> r(new Robot(&lacze));
@@ -63,6 +68,10 @@ void Scena::DodajRoboty()
 
 }
 
+/*!
+ * Tworzy Przeszkody wraz ze wskaźnikami na nie, następnie wrzuca te wskaźniki do listy obiektów graficznych
+ * oraz wyświetla przeszkody na scenie.
+ */
 void Scena::DodajPrzeszkody()
 {
     std::shared_ptr <ObiektGraficzny> p(new Przeszkoda(&lacze));
@@ -90,6 +99,10 @@ void Scena::DodajPrzeszkody()
     (*Oit)->DodajPrzeszkode3();
 }
 
+
+/*!
+ * Zwraca dla użytkownika informacje o indeksie akulanie używanego robota, oraz jego punkcie położenia.
+ */
 void Scena::JakiRobot()
 {
     int ktory = std::distance(LRobotow.begin(), Rit);
@@ -97,7 +110,9 @@ void Scena::JakiRobot()
     std::cout << "Wspolrzedne: " << (*Rit)->ZwrocPolozenie() << std::endl << std::endl;
 }
 
-
+/*!
+ * Korzystając z lity robotów ustawia iterator na danego robota którego chce obsługiwać użytkownik.
+ */
 void Scena::WyborRobota()
 {
     unsigned int w;
@@ -121,14 +136,10 @@ void Scena::WyborRobota()
     }
 }
 
-
 /*!
- * Jest jako jedyna, jawnie wywoływana w funkcji \e main. Inicjalizuje cały przebieg działania prgramu. Posiada
- * menu do komunikacji z użytkownikiem w postaci \e switch'a, który jest uodporniony na podanie opcji, która nie jest
- * obsługiwana.
+ * Posiada menu do komunikacji z użytkownikiem w postaci \e switch'a, który
+ * jest uodporniony na podanie opcji, która nie jest obsługiwana. Względem wybranej opcji odpala daną metodę dla robota.
  */
-
-
 void Scena::Menu()
 {
     char znak;
@@ -192,7 +203,9 @@ void Scena::Menu()
 
 }
 
-
+/*!
+ * Scala najważniejsze metody programu w jedną, aby zachować przejrzystość funkcji \e main.
+ */
 void Scena::Run()
 {
     DodajRoboty();

@@ -1,7 +1,6 @@
 #ifndef PRZESZKODA_HH
 #define PRZESZKODA_HH
 
-
 /*!
  * \file
  * \brief Definicja klasy Przeszkoda.
@@ -9,11 +8,15 @@
  * Plik zawiera definicję klasy Przeszkoda.
  */
 
-
 #include "ObiektGraficzny.hh"
 #include <cmath>
 
-
+/*!
+ * \brief Modeluje przeszkode utworzoną w przestrzeni sceny.
+ *
+ * Przeszkoda powinna być wielokątem zamkniętym. Jej sęs istnienia jest taki
+ * aby blokować robotowi drogę i stwarzać możliwości kolizji.
+ */
 class Przeszkoda : public ObiektGraficzny
 {
 
@@ -57,6 +60,9 @@ public:
      */
      Przeszkoda(PzG::LaczeDoGNUPlota * lacznik);
 
+    /*!
+     * \brief Wykrywa kolizję robota z przeszkodą
+     */
      bool Kolizja(Wektor2D wek, double r);
 };
 

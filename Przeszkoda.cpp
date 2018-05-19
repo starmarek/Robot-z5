@@ -5,16 +5,20 @@
  * Plik zawiera definicje metod klasy Przeszkoda wraz z ich opisem.
  */
 
-
 #include "Przeszkoda.hh"
-
 
 /*!
  * Inicjalizacja zmiennej statycznej.
  */
 int Przeszkoda::Indeks;
 
-
+/*!
+ * Sprawdza wszystkie możliwości kolizji - na rogach, na bokach i w środku przeszkody.
+ * Zwraca prawdę jeżeli doszło do kolizji, oraz fałsz jeżeli nie doszło.
+ *
+ * \param wek - polożenie aktualnie używanego robota.
+ * \param r - promień aktualnie używanego robota.
+ */
 bool Przeszkoda::Kolizja(Wektor2D wek, double r)
 {
     double x, y;
@@ -33,7 +37,6 @@ bool Przeszkoda::Kolizja(Wektor2D wek, double r)
     return (cDist <= pow((r), 2));
 }
 
-
 /*!
  * Nadaje danej przeszkodzie numer indeksu, nazwe do zapisu do pliku, oraz inicjalizuje dany plik.
  */
@@ -47,7 +50,6 @@ Przeszkoda::Przeszkoda(PzG::LaczeDoGNUPlota * lacznik)
 
  wsklacze->DodajNazwePliku(Nazwa.c_str(), PzG::RR_Ciagly, 4);
 }
-
 
 /*!
  * Wrzuca wierzchołki do tablicy i zapisuje ją do pliku pod nazwą danej przeszkody.
@@ -66,7 +68,6 @@ void Przeszkoda::DodajPrzeszkode1()
     _PolozenieObiektu[1] = -150;
 }
 
-
 /*!
  * Wrzuca wierzchołki do tablicy i zapisuje ją do pliku pod nazwą danej przeszkody.
  */
@@ -83,7 +84,6 @@ void Przeszkoda::DodajPrzeszkode2()
     _PolozenieObiektu[0] = 200;
     _PolozenieObiektu[1] = -200;
 }
-
 
 /*!
  * Wrzuca wierzchołki do tablicy i zapisuje ją do pliku pod nazwą danej przeszkody.

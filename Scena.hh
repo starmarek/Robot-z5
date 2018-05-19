@@ -11,7 +11,6 @@
 #include "Robot.hh"
 #include "Przeszkoda.hh"
 
-
 /*!
  * \brief Klasa modelująca pojęcie Sceny.
  *
@@ -20,7 +19,6 @@
  */
 class Scena
 {
-
     /*!
      * \brief Zmienna potrzebna do komunikacji z programem \e gnuplot.
      *
@@ -28,9 +26,17 @@ class Scena
      */
     PzG::LaczeDoGNUPlota lacze;
 
+    /*!
+     * Lista przechowująca wskaźniki shared_ptr zszablonowane Obiektem graficznym, na wszystkie roboty
+     * i przeszkody. Zaraz pod nią, iterator do niej.
+     */
     std::list < std::shared_ptr <ObiektGraficzny> > LObiektow;
     std::list < std::shared_ptr <ObiektGraficzny> > :: iterator Oit = LObiektow.begin();
 
+    /*!
+     * Lista przechowująca wskaźniki shared_ptr zszablonowane Robotem, na wszystkie roboty.
+     * Zaraz pod nią, iterator do niej.
+     */
     std::list < std::shared_ptr <Robot> > LRobotow;
     std::list < std::shared_ptr <Robot> > :: iterator Rit = LRobotow.begin();
 
@@ -43,13 +49,33 @@ public:
     void WyswietlMenu();
 
     /*!
-     * \brief Uruchamia, kończy i kontroluje przebieg działania programu.
+     * \brief Kontroluje główny przebieg działania programu.
      */
     void Run();
+
+    /*!
+     * \brief Główna inicjalizacja robotów w programie
+     */
     void DodajRoboty();
+
+    /*!
+     * \brief Główna inicjalizacja przeszkód w programie
+     */
     void DodajPrzeszkody();
+
+    /*!
+     * \brief Informuje o aktualnie używanym robocie.
+     */
     void JakiRobot();
+
+    /*!
+     * \brief Umożliwia wybór robota którym będzie się operować.
+     */
     void WyborRobota();
+
+    /*!
+     * \brief Obsługuje menu do komunikacji z użytkownikiem.
+     */
     void Menu();
 };
 

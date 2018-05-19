@@ -128,20 +128,20 @@
 1526676026 source:/home/starmarek/Desktop/Robot-z5-master/main.cpp
 	"Scena.hh"
 
-1526684403 /home/starmarek/Desktop/Robot-z5-master/Scena.hh
+1526732932 /home/starmarek/Desktop/Robot-z5-master/Scena.hh
 	"Robot.hh"
 	"Przeszkoda.hh"
 
-1526724275 /home/starmarek/Desktop/Robot-z5-master/Robot.hh
+1526730728 /home/starmarek/Desktop/Robot-z5-master/Robot.hh
 	<math.h>
 	<unistd.h>
 	<memory>
 	"Sciezka.hh"
 
-1526723326 /home/starmarek/Desktop/Robot-z5-master/ObiektGraficzny.hh
+1526733066 /home/starmarek/Desktop/Robot-z5-master/ObiektGraficzny.hh
 	"ZbiorWierzcholkow.hh"
 
-1526724001 /home/starmarek/Desktop/Robot-z5-master/ZbiorWierzcholkow.hh
+1526728626 /home/starmarek/Desktop/Robot-z5-master/ZbiorWierzcholkow.hh
 	<fstream>
 	"Wektor2D.hh"
 	"lacze_do_gnuplota.hh"
@@ -149,32 +149,32 @@
 1525727321 /home/starmarek/Desktop/Robot-z5-master/Wektor2D.hh
 	"SWektor.hh"
 
-1526723471 /home/starmarek/Desktop/Robot-z5-master/SWektor.hh
+1526728593 /home/starmarek/Desktop/Robot-z5-master/SWektor.hh
 	<iostream>
 
-1526681913 /home/starmarek/Desktop/Robot-z5-master/Sciezka.hh
+1526729751 /home/starmarek/Desktop/Robot-z5-master/Sciezka.hh
 	"ObiektGraficzny.hh"
 
-1526720010 source:/home/starmarek/Desktop/Robot-z5-master/ObiektGraficzny.cpp
+1526729649 source:/home/starmarek/Desktop/Robot-z5-master/ObiektGraficzny.cpp
 	<fstream>
 	"ObiektGraficzny.hh"
 
-1526724312 source:/home/starmarek/Desktop/Robot-z5-master/Robot.cpp
+1526731506 source:/home/starmarek/Desktop/Robot-z5-master/Robot.cpp
 	"Robot.hh"
 
-1526724385 source:/home/starmarek/Desktop/Robot-z5-master/Scena.cpp
+1526732932 source:/home/starmarek/Desktop/Robot-z5-master/Scena.cpp
 	"Scena.hh"
 
-1526421004 source:/home/starmarek/Desktop/Robot-z5-master/Sciezka.cpp
+1526729751 source:/home/starmarek/Desktop/Robot-z5-master/Sciezka.cpp
 	"Sciezka.hh"
 
-1526724001 source:/home/starmarek/Desktop/Robot-z5-master/ZbiorWierzcholkow.cpp
+1526728632 source:/home/starmarek/Desktop/Robot-z5-master/ZbiorWierzcholkow.cpp
 	"ZbiorWierzcholkow.hh"
 
-1526723326 source:/home/starmarek/Desktop/Robot-z5-master/Przeszkoda.cpp
+1526730199 source:/home/starmarek/Desktop/Robot-z5-master/Przeszkoda.cpp
 	"Przeszkoda.hh"
 
-1526723326 /home/starmarek/Desktop/Robot-z5-master/Przeszkoda.hh
+1526730199 /home/starmarek/Desktop/Robot-z5-master/Przeszkoda.hh
 	"ObiektGraficzny.hh"
 	<cmath>
 

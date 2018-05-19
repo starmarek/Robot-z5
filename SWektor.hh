@@ -53,6 +53,10 @@ public:
         std::cout << "Ilosc istniejacych obiektow klasy Wektor2D: " << WektoryAktualne << std::endl << std::endl;
     }
 
+    /*!
+     * Wyświetla aktualnie istniejącą i ogólnie stworzoną ilość wektorów 2D. Metoda napisana
+     * z myślą aby przetestować na koniec działania programu czy nie powstały żadne wycieki pamięci.
+     */
     static void ZwrocObi()
     {
         std::cout << "Laczna ilosc stworzonych obiektow klasy Wektor2D: " << WektoryOgolne << std::endl;
