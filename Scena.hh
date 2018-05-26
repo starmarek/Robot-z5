@@ -8,8 +8,8 @@
  * Plik zawiera definicję klasy Scena.
  */
 
-#include "Robot.hh"
-#include "Przeszkoda.hh"
+#include "FabrykaOG.hh"
+
 
 /*!
  * \brief Klasa modelująca pojęcie Sceny.

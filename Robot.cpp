@@ -53,6 +53,7 @@ void Robot::Obrot(double a)
         _TabWierz[i][1] = x*sin(a) + y*cos(a);
 
     }
+
 }
 
 /*!

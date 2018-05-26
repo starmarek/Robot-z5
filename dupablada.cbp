@@ -19,6 +19,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="FabrykaOG.cpp" />
+		<Unit filename="FabrykaOG.hh" />
 		<Unit filename="ObiektGraficzny.cpp" />
 		<Unit filename="ObiektGraficzny.hh" />
 		<Unit filename="Przeszkoda.cpp" />

@@ -7,6 +7,10 @@
 
 #include "Scena.hh"
 
+Fabryka Fabryka::fab;
+
+
+
 /*!
  * Wyświetla informację o możliwych wyborach obsługiwanych przez program. Dodatkowo przy
  * użyciu metody \e PokazWektory wyświetla informacje o ilości obiektów typu \e Wektor2D.
@@ -30,11 +34,12 @@ void Scena::WyswietlMenu()
  */
 void Scena::DodajRoboty()
 {
-    std::shared_ptr <Robot> r(new Robot(&lacze));
-    std::shared_ptr <ObiektGraficzny> ro(r);
 
-    LRobotow.push_back(r);
-    LObiektow.push_back(ro);
+    std::shared_ptr <ObiektGraficzny > r = Fabryka::Buduj(0, &lacze);
+    std::shared_ptr <Robot> ro = std::static_pointer_cast < Robot >(r);
+
+    LRobotow.push_back(ro);
+    LObiektow.push_back(r);
 
     ++Rit;
     ++Oit;
@@ -42,11 +47,11 @@ void Scena::DodajRoboty()
     (*Rit)->InicjalizujKsztalt();
     (*Rit)->DodajRobota1();
 
-    std::shared_ptr <Robot> r1(new Robot(&lacze));
-    std::shared_ptr <ObiektGraficzny> ro1(r1);
+    std::shared_ptr <ObiektGraficzny > r1 = Fabryka::Buduj(0, &lacze);
+    std::shared_ptr <Robot> ro1 = std::static_pointer_cast < Robot >(r1);
 
-    LRobotow.push_back(r1);
-    LObiektow.push_back(ro1);
+    LRobotow.push_back(ro1);
+    LObiektow.push_back(r1);
 
     ++Rit;
     ++Oit;
@@ -54,11 +59,11 @@ void Scena::DodajRoboty()
     (*Rit)->InicjalizujKsztalt();
     (*Rit)->DodajRobota2();
 
-    std::shared_ptr <Robot> r2(new Robot(&lacze));
-    std::shared_ptr <ObiektGraficzny> ro2(r2);
+    std::shared_ptr <ObiektGraficzny > r2 = Fabryka::Buduj(0, &lacze);
+    std::shared_ptr <Robot> ro2 = std::static_pointer_cast < Robot >(r2);
 
-    LRobotow.push_back(r2);
-    LObiektow.push_back(ro2);
+    LRobotow.push_back(ro2);
+    LObiektow.push_back(r2);
 
     ++Rit;
     ++Oit;
@@ -74,7 +79,7 @@ void Scena::DodajRoboty()
  */
 void Scena::DodajPrzeszkody()
 {
-    std::shared_ptr <ObiektGraficzny> p(new Przeszkoda(&lacze));
+    std::shared_ptr <ObiektGraficzny > p = Fabryka::Buduj(1, &lacze);
 
     LObiektow.push_back(p);
 
@@ -82,7 +87,7 @@ void Scena::DodajPrzeszkody()
 
     (*Oit)->DodajPrzeszkode1();
 
-    std::shared_ptr <ObiektGraficzny> p1(new Przeszkoda(&lacze));
+    std::shared_ptr <ObiektGraficzny > p1 = Fabryka::Buduj(1, &lacze);
 
     LObiektow.push_back(p1);
 
@@ -90,7 +95,7 @@ void Scena::DodajPrzeszkody()
 
     (*Oit)->DodajPrzeszkode2();
 
-    std::shared_ptr <ObiektGraficzny> p2(new Przeszkoda(&lacze));
+    std::shared_ptr <ObiektGraficzny > p2 = Fabryka::Buduj(1, &lacze);
 
     LObiektow.push_back(p2);
 

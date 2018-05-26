@@ -35,7 +35,16 @@ class Przeszkoda : public ObiektGraficzny
      */
     static int Indeks;
 
+    Przeszkoda(PzG::LaczeDoGNUPlota * lacznik);
+
+    Przeszkoda(const Przeszkoda &) { };
+
 public:
+
+    static Przeszkoda* stworz(PzG::LaczeDoGNUPlota * lacznik)
+    {
+        return new Przeszkoda(lacznik);
+    }
 
    /*!
     * \brief Inicjalizajca przeszkody numer 1.
@@ -58,7 +67,7 @@ public:
     /*!
      * \brief Wykonuje podstawowe czynności przy stworzeniu obiektu typu Przeszkoda.
      */
-     Przeszkoda(PzG::LaczeDoGNUPlota * lacznik);
+
 
     /*!
      * \brief Wykrywa kolizję robota z przeszkodą

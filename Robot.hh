@@ -77,12 +77,20 @@ class Robot : public ObiektGraficzny
      */
     double Promien;
 
-public:
-
     /*!
      * \brief Wykonuje podstawowe czynności przy stworzeniu obiektu typu Robot.
      */
     Robot(PzG::LaczeDoGNUPlota * lacznik);
+
+    Robot(const Robot &) { };
+
+
+public:
+
+    static Robot* dodajtypa(PzG::LaczeDoGNUPlota * lacznik)
+    {
+        return new Robot(lacznik);
+    }
 
     /*!
      * \brief Metoda zmieniająca szybkosc robota.

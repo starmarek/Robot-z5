@@ -128,11 +128,10 @@
 1526676026 source:/home/starmarek/Desktop/Robot-z5-master/main.cpp
 	"Scena.hh"
 
-1526732932 /home/starmarek/Desktop/Robot-z5-master/Scena.hh
-	"Robot.hh"
-	"Przeszkoda.hh"
+1527256055 /home/starmarek/Desktop/Robot-z5-master/Scena.hh
+	"FabrykaOG.hh"
 
-1526730728 /home/starmarek/Desktop/Robot-z5-master/Robot.hh
+1527370206 /home/starmarek/Desktop/Robot-z5-master/Robot.hh
 	<math.h>
 	<unistd.h>
 	<memory>
@@ -159,10 +158,10 @@
 	<fstream>
 	"ObiektGraficzny.hh"
 
-1526731506 source:/home/starmarek/Desktop/Robot-z5-master/Robot.cpp
+1527365549 source:/home/starmarek/Desktop/Robot-z5-master/Robot.cpp
 	"Robot.hh"
 
-1526732932 source:/home/starmarek/Desktop/Robot-z5-master/Scena.cpp
+1527368643 source:/home/starmarek/Desktop/Robot-z5-master/Scena.cpp
 	"Scena.hh"
 
 1526729751 source:/home/starmarek/Desktop/Robot-z5-master/Sciezka.cpp
@@ -174,7 +173,14 @@
 1526730199 source:/home/starmarek/Desktop/Robot-z5-master/Przeszkoda.cpp
 	"Przeszkoda.hh"
 
-1526730199 /home/starmarek/Desktop/Robot-z5-master/Przeszkoda.hh
+1527370229 /home/starmarek/Desktop/Robot-z5-master/Przeszkoda.hh
 	"ObiektGraficzny.hh"
 	<cmath>
+
+1527369406 source:/home/starmarek/Desktop/Robot-z5-master/FabrykaOG.cpp
+	"FabrykaOG.hh"
+
+1527365642 /home/starmarek/Desktop/Robot-z5-master/FabrykaOG.hh
+	"Robot.hh"
+	"Przeszkoda.hh"
 
