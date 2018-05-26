@@ -105,6 +105,16 @@ void Robot::InicjalizujKsztalt()
     ZapiszDoPliku(Nazwa.c_str());
 }
 
+void Robot::DodajRobota()
+{
+    std::cout << "Podaj wspolrzedne do stworzenia nowego robota:\n ";
+    std::cin >> _PolozenieObiektu[0] >> _PolozenieObiektu[1];
+    ZapiszDoPliku(Nazwa.c_str());
+    sciezkowy.DodajPierwszyPunkt(_PolozenieObiektu[0], _PolozenieObiektu[1], NazwaSciezki);
+
+}
+
+
 /*!
  * Metoda zmieniająca położenie robota względem zadanego punktu.
  * Dodatkowo inicjalizuje pierwszy punkt ścieżki oraz rysuje robota w programie
@@ -154,6 +164,7 @@ bool Robot::DetekcjaKol(std::list < std::shared_ptr <ObiektGraficzny> > lista)
 {
     for(std::list < std::shared_ptr <ObiektGraficzny> > :: iterator it = lista.begin(); it != lista.end(); ++it)
     {
+        std::cout << (*it)->_PolozenieObiektu << "\n";
         if((*it)->Kolizja(this->_PolozenieObiektu, this->Promien))
         {
             std::cout << "\n!!! Ruch nie moze zostac kontynuowany \n!!! ze wzgledu na wystapienie kolizji\n";

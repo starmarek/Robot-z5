@@ -46,6 +46,8 @@ public:
         return new Przeszkoda(lacznik);
     }
 
+    void DodajPrzeszkode();
+
    /*!
     * \brief Inicjalizajca przeszkody numer 1.
     */

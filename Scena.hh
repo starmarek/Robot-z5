@@ -19,6 +19,7 @@
  */
 class Scena
 {
+    enum Typy {Robocik, Przeszkodzisko};
     /*!
      * \brief Zmienna potrzebna do komunikacji z programem \e gnuplot.
      *
@@ -77,6 +78,10 @@ public:
      * \brief Obsługuje menu do komunikacji z użytkownikiem.
      */
     void Menu();
+
+    void NowyRobot();
+
+    void NowaPrzeszkoda();
 };
 
 #endif

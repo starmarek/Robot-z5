@@ -151,7 +151,9 @@ public:
     /*!
      * \brief Metoda wykrywająca wszystkie kolizję w podanej liście Obiektów graficznych.
      */
-    bool DetekcjaKol(std::list < std::shared_ptr <ObiektGraficzny> > lista);
+    bool DetekcjaKol( std::list < std::shared_ptr <ObiektGraficzny> > lista);
+
+    void DodajRobota();
 };
 
 #endif

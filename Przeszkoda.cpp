@@ -12,6 +12,28 @@
  */
 int Przeszkoda::Indeks;
 
+void Przeszkoda::DodajPrzeszkode()
+{
+    double x, y, sz, wys, tmpx, tmpy;
+    std::cout << "Podaj docelowe wspolrzedne przeszkody (lewy dolny rog)\noraz jej szerokosc i dlugosc: x y sz wys >";
+    std::cin >> x >> y >> sz >> wys;
+    _TabWierz.DodajWierzcholek(x, y);
+    tmpx = x + sz;
+    _TabWierz.DodajWierzcholek(tmpx, y);
+    tmpy = y + wys;
+    _TabWierz.DodajWierzcholek(tmpx, tmpy);
+    _TabWierz.DodajWierzcholek(x, tmpy);
+    _TabWierz.DodajWierzcholek(x, y);
+
+    ZapiszDoPliku(Nazwa.c_str());
+
+    tmpx = x+(0.5*sz);
+    tmpy = y+(0.5*wys);
+
+    _PolozenieObiektu[0] = tmpx;
+    _PolozenieObiektu[1] = tmpy;
+}
+
 /*!
  * Sprawdza wszystkie możliwości kolizji - na rogach, na bokach i w środku przeszkody.
  * Zwraca prawdę jeżeli doszło do kolizji, oraz fałsz jeżeli nie doszło.
@@ -24,6 +46,7 @@ bool Przeszkoda::Kolizja(Wektor2D wek, double r)
     double x, y;
     double szerokosc = _TabWierz[1][0] - _TabWierz[0][0];
     double wysokosc = _TabWierz[2][1] - _TabWierz[1][1];
+
     x = abs(wek[0] - _PolozenieObiektu[0]);
     y = abs(wek[1] - _PolozenieObiektu[1]);
     double cDist = pow((x - szerokosc/2), 2) + pow((y - wysokosc/2), 2);

@@ -40,7 +40,7 @@ protected:
      *  Zawiera współrzędne punktu względem, którego podane są
      *  współrzędne punktów obrysu obiektu.
      */
-    Wektor2D   _PolozenieObiektu;
+
 
     /*!
      * \brief Tablica wierzchołków
@@ -64,7 +64,7 @@ protected:
     std::string NazwaSciezki = "figury/";
 
 public:
-
+ Wektor2D   _PolozenieObiektu;
     /*!
      * \brief Metoda zmieniająca aktualne położenie obiektu
      */
@@ -105,6 +105,7 @@ public:
         std::cout << "Ilosc nieusunietych obiektow klasy ObiektGraficzny: " << ObAkt << std::endl << std::endl;
     }
 
+    virtual void DodajPrzeszkode() { ; }
     /*!
      * Metoda tworząca przeszkodę, nie mająca żadnego zastosowania w klasie bazowej.
      */

@@ -5,13 +5,13 @@ std::shared_ptr < ObiektGraficzny > Fabryka::dodajObiekt(int w, PzG::LaczeDoGNUP
 
     if(w == 0)
     {
-        std::shared_ptr < Robot > tmp = std::shared_ptr < Robot > (Robot::dodajtypa(dupa));
+        auto tmp = std::shared_ptr < Robot > (Robot::dodajtypa(dupa));
         return tmp;
     }
 
     if(w == 1)
     {
-        std::shared_ptr < Przeszkoda > tmp = std::shared_ptr < Przeszkoda > (Przeszkoda::stworz(dupa));
+        auto tmp = std::shared_ptr < Przeszkoda > (Przeszkoda::stworz(dupa));
         return tmp;
     }
 

@@ -23,7 +23,9 @@ void Scena::WyswietlMenu()
     std::cout << "o -> Obrot o kat" << std::endl;
     std::cout << "w -> Ponowne wyswietlenie menu" << std::endl;
     std::cout << "g -> Selekcja robota" << std:: endl;
-    std::cout << "z -> Zmiana szybkosci robota" << std::endl << std::endl;
+    std::cout << "z -> Zmiana szybkosci robota" << std::endl;
+    std::cout << "q -> Dodanie nowej przeszkody" << std::endl;
+    std::cout << "p -> Dodanie nowego robota" << std::endl << std::endl;
     std::cout << "k -> Zakonczenie dzialania programu" << std::endl;
 }
 
@@ -35,7 +37,7 @@ void Scena::WyswietlMenu()
 void Scena::DodajRoboty()
 {
 
-    std::shared_ptr <ObiektGraficzny > r = Fabryka::Buduj(0, &lacze);
+    std::shared_ptr <ObiektGraficzny > r = Fabryka::Buduj(Robocik, &lacze);
     std::shared_ptr <Robot> ro = std::static_pointer_cast < Robot >(r);
 
     LRobotow.push_back(ro);
@@ -47,7 +49,7 @@ void Scena::DodajRoboty()
     (*Rit)->InicjalizujKsztalt();
     (*Rit)->DodajRobota1();
 
-    std::shared_ptr <ObiektGraficzny > r1 = Fabryka::Buduj(0, &lacze);
+    std::shared_ptr <ObiektGraficzny > r1 = Fabryka::Buduj(Robocik, &lacze);
     std::shared_ptr <Robot> ro1 = std::static_pointer_cast < Robot >(r1);
 
     LRobotow.push_back(ro1);
@@ -59,7 +61,7 @@ void Scena::DodajRoboty()
     (*Rit)->InicjalizujKsztalt();
     (*Rit)->DodajRobota2();
 
-    std::shared_ptr <ObiektGraficzny > r2 = Fabryka::Buduj(0, &lacze);
+    std::shared_ptr <ObiektGraficzny > r2 = Fabryka::Buduj(Robocik, &lacze);
     std::shared_ptr <Robot> ro2 = std::static_pointer_cast < Robot >(r2);
 
     LRobotow.push_back(ro2);
@@ -79,7 +81,7 @@ void Scena::DodajRoboty()
  */
 void Scena::DodajPrzeszkody()
 {
-    std::shared_ptr <ObiektGraficzny > p = Fabryka::Buduj(1, &lacze);
+    std::shared_ptr <ObiektGraficzny > p = Fabryka::Buduj(Przeszkodzisko, &lacze);
 
     LObiektow.push_back(p);
 
@@ -87,7 +89,7 @@ void Scena::DodajPrzeszkody()
 
     (*Oit)->DodajPrzeszkode1();
 
-    std::shared_ptr <ObiektGraficzny > p1 = Fabryka::Buduj(1, &lacze);
+    std::shared_ptr <ObiektGraficzny > p1 = Fabryka::Buduj(Przeszkodzisko, &lacze);
 
     LObiektow.push_back(p1);
 
@@ -95,7 +97,7 @@ void Scena::DodajPrzeszkody()
 
     (*Oit)->DodajPrzeszkode2();
 
-    std::shared_ptr <ObiektGraficzny > p2 = Fabryka::Buduj(1, &lacze);
+    std::shared_ptr <ObiektGraficzny > p2 = Fabryka::Buduj(Przeszkodzisko, &lacze);
 
     LObiektow.push_back(p2);
 
@@ -192,6 +194,15 @@ void Scena::Menu()
             WyborRobota();
             break;
 
+        case 'p':
+            NowyRobot();
+            break;
+
+        case 'q':
+            NowaPrzeszkoda();
+            break;
+
+
         default:
             if(znak == 'k')
             {
@@ -217,4 +228,32 @@ void Scena::Run()
     DodajPrzeszkody();
     lacze.Rysuj();
     Menu();
+}
+
+void Scena::NowyRobot()
+{
+    std::shared_ptr <ObiektGraficzny > w = Fabryka::Buduj(Robocik, &lacze);
+    std::shared_ptr <Robot> wo = std::static_pointer_cast < Robot >(w);
+
+    LRobotow.push_back(wo);
+    LObiektow.push_back(w);
+
+    Rit = LRobotow.end();
+    Rit--;
+    (*Rit)->InicjalizujKsztalt();
+    (*Rit)->DodajRobota();
+    lacze.Rysuj();
+}
+
+void Scena::NowaPrzeszkoda()
+{
+    std::shared_ptr <ObiektGraficzny > p = Fabryka::Buduj(Przeszkodzisko, &lacze);
+
+    LObiektow.push_back(p);
+
+    Oit = LObiektow.end();
+    Oit--;
+
+    (*Oit)->DodajPrzeszkode();
+    lacze.Rysuj();
 }
