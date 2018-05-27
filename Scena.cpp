@@ -7,9 +7,10 @@
 
 #include "Scena.hh"
 
+/*!
+ * Inicjalizacja zmiennej statycznej.
+ */
 Fabryka Fabryka::fab;
-
-
 
 /*!
  * Wyświetla informację o możliwych wyborach obsługiwanych przez program. Dodatkowo przy
@@ -28,7 +29,6 @@ void Scena::WyswietlMenu()
     std::cout << "p -> Dodanie nowego robota" << std::endl << std::endl;
     std::cout << "k -> Zakonczenie dzialania programu" << std::endl;
 }
-
 
 /*!
  * Tworzy Roboty wraz ze wskaźnikami na nie, następnie wrzuca te wskaźniki do dwóch list
@@ -118,6 +118,23 @@ void Scena::JakiRobot()
 }
 
 /*!
+ * Sprawdza czy na strumieniu \e std::cin jest ustawiona flaga \e fail() i tak długo
+ * pobiera od użytkownika nową wartość aż będzie ona wartością liczbową.
+ */
+int Scena::Policjant()
+{
+    int w;
+    while(std::cin.fail())
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<int>::max(),'\n');
+        std::cout << "Prosze podac cyfre a nie znak!\n";
+        std::cin >> w;
+    }
+    return w;
+}
+
+/*!
  * Korzystając z lity robotów ustawia iterator na danego robota którego chce obsługiwać użytkownik.
  */
 void Scena::WyborRobota()
@@ -135,6 +152,7 @@ void Scena::WyborRobota()
 
     std::cout << "Prosze wybrac robota: " << std::endl;
     std::cin >> w;
+    if (std::cin.fail()) w = Policjant();
     Rit = LRobotow.begin();
 
     for(unsigned int i = 1; i < w; ++i)
@@ -165,6 +183,7 @@ void Scena::Menu()
             int tmp;
             std::cout << "Podaj odleglosc (ilosc jednostek) na jaka ma sie przemiescic robot: \n";
             std::cin >> tmp;
+            if (std::cin.fail()) tmp = Policjant();
             (*Rit)->JedzProsto(tmp, LObiektow);
             break;
 
@@ -173,13 +192,18 @@ void Scena::Menu()
             break;
 
         case 'z':
-            (*Rit)->ZmienSzybkosc();
+            int w;
+            std::cout << "Prosze podac nowa szybkosc poruszania sie i obrotu dla robota: \n";
+            std::cin >> w;
+            if (std::cin.fail()) w = Policjant();
+            (*Rit)->ZmienSzybkosc(w);
             break;
 
         case 'o':
             int tm;
             std::cout << "Podaj kat o jaki ma sie obrocic robot: \n";
             std::cin >> tm;
+            if (std::cin.fail()) tm = Policjant();
             (*Rit)->obroc(tm);
             break;
 
@@ -187,6 +211,7 @@ void Scena::Menu()
             double a;
             std::cout << "Podaj wartosc do skalowania robota:  " << std::endl;
             std::cin >> a;
+            if (std::cin.fail()) a = Policjant();
             (*Rit)->Skaluj(a);
             break;
 
@@ -230,6 +255,10 @@ void Scena::Run()
     Menu();
 }
 
+/*!
+ * Nowo stworzonego robota podpisuje pod dwa shared_ptry oraz wrzuca je do dwóch różnych list.
+ * Następnie inicjalizuje tego robota na scenie i go tam rysuje.
+ */
 void Scena::NowyRobot()
 {
     std::shared_ptr <ObiektGraficzny > w = Fabryka::Buduj(Robocik, &lacze);
@@ -245,6 +274,10 @@ void Scena::NowyRobot()
     lacze.Rysuj();
 }
 
+/*!
+ * Nowo stworzoną przeszkodę podpisuje pod shared_ptr i wrzuca go do listy obiektów graficznych.
+ * Następnie inicjaluzuje tą przeszkodę i rysuja ją na scenie.
+ */
 void Scena::NowaPrzeszkoda()
 {
     std::shared_ptr <ObiektGraficzny > p = Fabryka::Buduj(Przeszkodzisko, &lacze);

@@ -20,32 +20,41 @@
 class Przeszkoda : public ObiektGraficzny
 {
 
-    /*!
-     * \brief Wskaznik na lacze.
-     *
-     * Służy do komunikacji z polem 'lacze' w klasie Scena.
-     */
+   /*!
+    * \brief Wskaznik na lacze.
+    *
+    * Służy do komunikacji z polem 'lacze' w klasie Scena.
+    */
     PzG::LaczeDoGNUPlota * wsklacze;
 
-
-    /*!
-     * \brief Zmienna indeksująca przeszkody.
-     *
-     * Zmienna służąca do indeksowania plików do zapisu przeszkód.
-     */
+   /*!
+    * \brief Zmienna indeksująca przeszkody.
+    *
+    * Zmienna służąca do indeksowania plików do zapisu przeszkód.
+    */
     static int Indeks;
 
+   /*!
+    * \brief Wykonuje podstawowe czynności przy stworzeniu obiektu typu Przeszkoda.
+    */
     Przeszkoda(PzG::LaczeDoGNUPlota * lacznik);
 
+   /*!
+    * Konstruktor przeniesiony do sekcji \e private aby zapobiec przypadkowemu tworzeniu sie obiektow tej klasy.
+    */
     Przeszkoda(const Przeszkoda &) { };
 
 public:
 
-    static Przeszkoda* stworz(PzG::LaczeDoGNUPlota * lacznik)
-    {
-        return new Przeszkoda(lacznik);
-    }
+   /*!
+    * Metoda umożliwiająca tworzenie obiektów klasy \e Przeszkoda, zwracajaca wskaźnik na nowo
+    * utworzony obiekt.
+    */
+    static Przeszkoda* stworz(PzG::LaczeDoGNUPlota * lacznik) { return new Przeszkoda(lacznik); }
 
+   /*!
+    * \brief Tworzy nową przeszkodę.
+    */
     void DodajPrzeszkode();
 
    /*!
@@ -64,12 +73,6 @@ public:
     * \brief Inicjalizajca przeszkody numer 3.
     */
     void DodajPrzeszkode3();
-
-
-    /*!
-     * \brief Wykonuje podstawowe czynności przy stworzeniu obiektu typu Przeszkoda.
-     */
-
 
     /*!
      * \brief Wykrywa kolizję robota z przeszkodą

@@ -9,6 +9,7 @@
  */
 
 #include "ZbiorWierzcholkow.hh"
+#include <limits>
 
 /*!
  * \brief Modeluje obiekt, który ma swoją reprezentację graficzną
@@ -21,16 +22,15 @@
  */
 class ObiektGraficzny
 {
+   /*!
+    * Zmienna zliczająca aktualnie istniejące obiketu typu ObiektGraficzny.
+    */
+    static int ObAkt;
 
-/*!
- * Zmienna zliczająca aktualnie istniejące obiketu typu ObiektGraficzny.
- */
-static int ObAkt;
-
-/*!
- * Zmienna zliczająca ogólnie stworzone obiekty typu ObiektGraficzny.
- */
-static int ObOgol;
+   /*!
+    * Zmienna zliczająca ogólnie stworzone obiekty typu ObiektGraficzny.
+    */
+    static int ObOgol;
 
 protected:
 
@@ -40,7 +40,7 @@ protected:
      *  Zawiera współrzędne punktu względem, którego podane są
      *  współrzędne punktów obrysu obiektu.
      */
-
+    Wektor2D   _PolozenieObiektu;
 
     /*!
      * \brief Tablica wierzchołków
@@ -63,8 +63,10 @@ protected:
      */
     std::string NazwaSciezki = "figury/";
 
+
+
 public:
- Wektor2D   _PolozenieObiektu;
+
     /*!
      * \brief Metoda zmieniająca aktualne położenie obiektu
      */
@@ -105,21 +107,25 @@ public:
         std::cout << "Ilosc nieusunietych obiektow klasy ObiektGraficzny: " << ObAkt << std::endl << std::endl;
     }
 
-    virtual void DodajPrzeszkode() { ; }
     /*!
      * Metoda tworząca przeszkodę, nie mająca żadnego zastosowania w klasie bazowej.
      */
-    virtual void DodajPrzeszkode1() { ; }
+    virtual void DodajPrzeszkode() { }
 
     /*!
      * Metoda tworząca przeszkodę, nie mająca żadnego zastosowania w klasie bazowej.
      */
-    virtual void DodajPrzeszkode2() { ; }
+    virtual void DodajPrzeszkode1() { }
 
     /*!
      * Metoda tworząca przeszkodę, nie mająca żadnego zastosowania w klasie bazowej.
      */
-    virtual void DodajPrzeszkode3() { ; }
+    virtual void DodajPrzeszkode2() { }
+
+    /*!
+     * Metoda tworząca przeszkodę, nie mająca żadnego zastosowania w klasie bazowej.
+     */
+    virtual void DodajPrzeszkode3() { }
 };
 
 #endif

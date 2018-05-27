@@ -11,6 +11,7 @@
 #include <math.h>
 #include <unistd.h>
 #include <memory>
+
 #include "Sciezka.hh"
 
 /*!
@@ -29,7 +30,6 @@ class Robot : public ObiektGraficzny
      */
     double skala = 1;
 
-
     /*!
      * \brief Wskaznik na lacze.
      *
@@ -37,14 +37,12 @@ class Robot : public ObiektGraficzny
      */
     PzG::LaczeDoGNUPlota * wsklacze;
 
-
     /*!
      * \brief Osobista ścieżka danego robota.
      *
      * Zmienna dzięki której możemy rysować ścieżkę podczas ruchu robota.
      */
     Sciezka sciezkowy;
-
 
     /*!
      * \brief Osobista szybkosc animacji danego robota.
@@ -82,20 +80,24 @@ class Robot : public ObiektGraficzny
      */
     Robot(PzG::LaczeDoGNUPlota * lacznik);
 
+   /*!
+    * Konstruktor przeniesiony do sekcji \e private aby zapobiec przypadkowemu tworzeniu sie obiektow tej klasy.
+    */
     Robot(const Robot &) { };
 
 
 public:
 
-    static Robot* dodajtypa(PzG::LaczeDoGNUPlota * lacznik)
-    {
-        return new Robot(lacznik);
-    }
+   /*!
+    * Metoda umożliwiająca tworzenie obiektów klasy \e Robot, zwracajaca wskaźnik na nowo
+    * utworzony obiekt.
+    */
+    static Robot* dodajtypa(PzG::LaczeDoGNUPlota * lacznik) { return new Robot(lacznik); }
 
     /*!
      * \brief Metoda zmieniająca szybkosc robota.
      */
-    void ZmienSzybkosc();
+    void ZmienSzybkosc(int g);
 
     /*!
      * \brief Metoda obracająca robota o podany kąt.
@@ -151,8 +153,11 @@ public:
     /*!
      * \brief Metoda wykrywająca wszystkie kolizję w podanej liście Obiektów graficznych.
      */
-    bool DetekcjaKol( std::list < std::shared_ptr <ObiektGraficzny> > lista);
+    bool DetekcjaKol( const std::list < std::shared_ptr <ObiektGraficzny> > &lista);
 
+    /*!
+     * \brief Tworzy nowego robota.
+     */
     void DodajRobota();
 };
 

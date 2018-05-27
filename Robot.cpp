@@ -14,13 +14,10 @@
 int Robot::Indeks;
 
 /*!
- * Pobiera od użytkownika nową wartość szybkości i nadpisuje aktualną.
+ * Nadpisuje aktualną wartość szybkości.
  */
-void Robot::ZmienSzybkosc()
+void Robot::ZmienSzybkosc(int g)
 {
-    double g;
-    std::cout << "Prosze podac nowa szybkosc poruszania sie i obrotu dla robota: \n";
-    std::cin >> g;
     szybkosc = g;
 }
 
@@ -42,8 +39,6 @@ void Robot::Obrot(double a)
     a *= M_PI/180;
     Alpha += a;
 
-
-
     for(unsigned int i = 0; i < _TabWierz.size(); ++i)
     {
         x = _TabWierz[i][0];
@@ -51,9 +46,7 @@ void Robot::Obrot(double a)
 
         _TabWierz[i][0] = x*cos(a) - y*sin(a);
         _TabWierz[i][1] = x*sin(a) + y*cos(a);
-
     }
-
 }
 
 /*!
@@ -105,15 +98,24 @@ void Robot::InicjalizujKsztalt()
     ZapiszDoPliku(Nazwa.c_str());
 }
 
+/*!
+ * Tworzy nowego robota na podstawie parametrów podanych przez użytkownika.
+ * Następnie zapisuje go do pliku oraz inicjalizuje jego ścieżkę.
+ */
 void Robot::DodajRobota()
 {
     std::cout << "Podaj wspolrzedne do stworzenia nowego robota:\n ";
     std::cin >> _PolozenieObiektu[0] >> _PolozenieObiektu[1];
+    while(std::cin.fail())
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<int>::max(),'\n');
+        std::cout << "Prosze podac odpowiednie wspolrzedne!\n";
+        std::cin >> _PolozenieObiektu[0] >> _PolozenieObiektu[1];
+    }
     ZapiszDoPliku(Nazwa.c_str());
     sciezkowy.DodajPierwszyPunkt(_PolozenieObiektu[0], _PolozenieObiektu[1], NazwaSciezki);
-
 }
-
 
 /*!
  * Metoda zmieniająca położenie robota względem zadanego punktu.
@@ -160,11 +162,10 @@ void Robot::DodajRobota3()
  *
  * Jeżli zaszła, zwraca \e true, jeżeli nie, \e false.
  */
-bool Robot::DetekcjaKol(std::list < std::shared_ptr <ObiektGraficzny> > lista)
+bool Robot::DetekcjaKol(const std::list < std::shared_ptr <ObiektGraficzny> > &lista)
 {
-    for(std::list < std::shared_ptr <ObiektGraficzny> > :: iterator it = lista.begin(); it != lista.end(); ++it)
+    for(std::list < std::shared_ptr <ObiektGraficzny> > :: const_iterator it = lista.begin(); it != lista.end(); ++it)
     {
-        std::cout << (*it)->_PolozenieObiektu << "\n";
         if((*it)->Kolizja(this->_PolozenieObiektu, this->Promien))
         {
             std::cout << "\n!!! Ruch nie moze zostac kontynuowany \n!!! ze wzgledu na wystapienie kolizji\n";
@@ -247,6 +248,7 @@ void Robot::Skaluj(double w)
 /*!
  * Konstruktor nadaje robotowi jego długość promienia, numer indeksu, oraz osobistą nazwę potrzebną przy zapisie do pliku.
  * Inicjalizuje również ten plik.
+ * Konstruktor przeniesiony do sekcji \e private aby zapobiec przypadkowemu tworzeniu sie obiektow tej klasy.
  */
 Robot::Robot(PzG::LaczeDoGNUPlota * lacznik)
 {

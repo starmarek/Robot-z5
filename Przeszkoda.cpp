@@ -12,11 +12,21 @@
  */
 int Przeszkoda::Indeks;
 
+/*!
+ * Tworzy nową przeszkodę na podstawie parametrów podanych przez użytkownika. Następnie zapisuje ją do pliku.
+ */
 void Przeszkoda::DodajPrzeszkode()
 {
     double x, y, sz, wys, tmpx, tmpy;
     std::cout << "Podaj docelowe wspolrzedne przeszkody (lewy dolny rog)\noraz jej szerokosc i dlugosc: x y sz wys >";
     std::cin >> x >> y >> sz >> wys;
+    while(std::cin.fail())
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<int>::max(),'\n');
+        std::cout << "Prosze podac odpowiednie wartosci!\n";
+        std::cin >> x >> y >> sz >> wys;
+    }
     _TabWierz.DodajWierzcholek(x, y);
     tmpx = x + sz;
     _TabWierz.DodajWierzcholek(tmpx, y);
@@ -62,6 +72,7 @@ bool Przeszkoda::Kolizja(Wektor2D wek, double r)
 
 /*!
  * Nadaje danej przeszkodzie numer indeksu, nazwe do zapisu do pliku, oraz inicjalizuje dany plik.
+ * Definicja konstruktora znajduje się w sekcji \e private aby zapobiec przypadkowemu tworzeniu sie obiektow tej klasy.
  */
 Przeszkoda::Przeszkoda(PzG::LaczeDoGNUPlota * lacznik)
 {

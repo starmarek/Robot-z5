@@ -10,7 +10,6 @@
 
 #include "FabrykaOG.hh"
 
-
 /*!
  * \brief Klasa modelująca pojęcie Sceny.
  *
@@ -19,7 +18,11 @@
  */
 class Scena
 {
+    /*!
+     * Ułatwia tworzenie obiektów, gdyż funkcja tworząca, tworzy obiekty na podstawie zmiennych typu \e int.
+     */
     enum Typy {Robocik, Przeszkodzisko};
+
     /*!
      * \brief Zmienna potrzebna do komunikacji z programem \e gnuplot.
      *
@@ -42,6 +45,11 @@ class Scena
     std::list < std::shared_ptr <Robot> > :: iterator Rit = LRobotow.begin();
 
 public:
+
+    /*!
+     * \brief Sprawdza poprawność danych wproawdzonych przez użytkownika.
+     */
+    int Policjant();
 
     /*!
      * \brief Wyświetla możliwości wyboru dla użytkownika, oraz ilość stworzonych obiektów
@@ -79,8 +87,14 @@ public:
      */
     void Menu();
 
+    /*!
+     * \brief Wywołuje tworzenie nowego robota.
+     */
     void NowyRobot();
 
+    /*!
+     * \brief Wywołuje tworzenie nowej przeszkody.
+     */
     void NowaPrzeszkoda();
 };
 
